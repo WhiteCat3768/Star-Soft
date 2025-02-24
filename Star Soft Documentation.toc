@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Introduction:}{2}{}%
+\contentsline {section}{\numberline {2}Measuresment system:}{2}{}%
+\contentsline {section}{\numberline {3}Requiered external libraries:}{2}{}%
+\contentsline {section}{\numberline {4}Components and structure:}{3}{}%
+\contentsline {section}{\numberline {5}Decay\_reactions:}{5}{}%
+\contentsline {section}{\numberline {6}Differentials\_solving\_methods:}{7}{}%
+\contentsline {section}{\numberline {7}Displays:}{10}{}%
+\contentsline {section}{\numberline {8}Electron\_positron\_operations:}{13}{}%
+\contentsline {section}{\numberline {9}Element\_operations:}{17}{}%
+\contentsline {section}{\numberline {10}Neutrino\_spectrum:}{22}{}%
+\contentsline {section}{\numberline {11}Processes:}{26}{}%
+\contentsline {section}{\numberline {12}Resonant\_reactions:}{28}{}%
+\contentsline {section}{\numberline {13}Temperature\_change:}{32}{}%
+\contentsline {section}{\numberline {14}Unresonant\_reactions:}{33}{}%
+\contentsline {section}{\numberline {15}World\_constants:}{35}{}%
+\contentsline {section}{\numberline {16}Star\_soft\_main:}{35}{}%
+\contentsline {section}{\numberline {17}Simulation\_input:}{36}{}%
+\contentsline {section}{\numberline {18}World\_constants:}{37}{}%
+\contentsline {section}{\numberline {19}Elements\_data:}{38}{}%
+\contentsline {section}{\numberline {20}Simulation\_output:}{38}{}%
+\contentsline {section}{\numberline {21}Logs:}{38}{}%
+\contentsline {section}{\numberline {22}Used materials:}{39}{}%

@@ -1,0 +1,1074 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.11)  26 DEC 2024 00:00
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"Star Soft Documentation.tex"
+(./Star Soft Documentation.tex
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-07-20>
+(c:/texlive/2024/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/02/08 v1.4n Standard LaTeX document class
+(c:/texlive/2024/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count194
+\c@section=\count195
+\c@subsection=\count196
+\c@subsubsection=\count197
+\c@paragraph=\count198
+\c@subparagraph=\count199
+\c@figure=\count266
+\c@table=\count267
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen142
+\Gin@req@width=\dimen143
+)
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks18
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/texlive/2024/texmf-dist/tex/latex/cmap/cmap.sty
+Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
+)
+(c:/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+)
+(c:/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+
+(c:/texlive/2024/texmf-dist/tex/latex/cyrillic/t2aenc.def
+File: t2aenc.def 2023/11/07 v1.0k Cyrillic encoding definition file
+Now handling font encoding T2A ...
+... processing UTF-8 mapping file for font encoding T2A
+
+(c:/texlive/2024/texmf-dist/tex/latex/base/t2aenc.dfu
+File: t2aenc.dfu 2022/06/07 v1.3c UTF-8 support
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0237 (decimal 567)
+   defining Unicode char U+0400 (decimal 1024)
+   defining Unicode char U+0401 (decimal 1025)
+   defining Unicode char U+0402 (decimal 1026)
+   defining Unicode char U+0403 (decimal 1027)
+   defining Unicode char U+0404 (decimal 1028)
+   defining Unicode char U+0405 (decimal 1029)
+   defining Unicode char U+0406 (decimal 1030)
+   defining Unicode char U+0407 (decimal 1031)
+   defining Unicode char U+0408 (decimal 1032)
+   defining Unicode char U+0409 (decimal 1033)
+   defining Unicode char U+040A (decimal 1034)
+   defining Unicode char U+040B (decimal 1035)
+   defining Unicode char U+040C (decimal 1036)
+   defining Unicode char U+040D (decimal 1037)
+   defining Unicode char U+040E (decimal 1038)
+   defining Unicode char U+040F (decimal 1039)
+   defining Unicode char U+0410 (decimal 1040)
+   defining Unicode char U+0411 (decimal 1041)
+   defining Unicode char U+0412 (decimal 1042)
+   defining Unicode char U+0413 (decimal 1043)
+   defining Unicode char U+0414 (decimal 1044)
+   defining Unicode char U+0415 (decimal 1045)
+   defining Unicode char U+0416 (decimal 1046)
+   defining Unicode char U+0417 (decimal 1047)
+   defining Unicode char U+0418 (decimal 1048)
+   defining Unicode char U+0419 (decimal 1049)
+   defining Unicode char U+041A (decimal 1050)
+   defining Unicode char U+041B (decimal 1051)
+   defining Unicode char U+041C (decimal 1052)
+   defining Unicode char U+041D (decimal 1053)
+   defining Unicode char U+041E (decimal 1054)
+   defining Unicode char U+041F (decimal 1055)
+   defining Unicode char U+0420 (decimal 1056)
+   defining Unicode char U+0421 (decimal 1057)
+   defining Unicode char U+0422 (decimal 1058)
+   defining Unicode char U+0423 (decimal 1059)
+   defining Unicode char U+0424 (decimal 1060)
+   defining Unicode char U+0425 (decimal 1061)
+   defining Unicode char U+0426 (decimal 1062)
+   defining Unicode char U+0427 (decimal 1063)
+   defining Unicode char U+0428 (decimal 1064)
+   defining Unicode char U+0429 (decimal 1065)
+   defining Unicode char U+042A (decimal 1066)
+   defining Unicode char U+042B (decimal 1067)
+   defining Unicode char U+042C (decimal 1068)
+   defining Unicode char U+042D (decimal 1069)
+   defining Unicode char U+042E (decimal 1070)
+   defining Unicode char U+042F (decimal 1071)
+   defining Unicode char U+0430 (decimal 1072)
+   defining Unicode char U+0431 (decimal 1073)
+   defining Unicode char U+0432 (decimal 1074)
+   defining Unicode char U+0433 (decimal 1075)
+   defining Unicode char U+0434 (decimal 1076)
+   defining Unicode char U+0435 (decimal 1077)
+   defining Unicode char U+0436 (decimal 1078)
+   defining Unicode char U+0437 (decimal 1079)
+   defining Unicode char U+0438 (decimal 1080)
+   defining Unicode char U+0439 (decimal 1081)
+   defining Unicode char U+043A (decimal 1082)
+   defining Unicode char U+043B (decimal 1083)
+   defining Unicode char U+043C (decimal 1084)
+   defining Unicode char U+043D (decimal 1085)
+   defining Unicode char U+043E (decimal 1086)
+   defining Unicode char U+043F (decimal 1087)
+   defining Unicode char U+0440 (decimal 1088)
+   defining Unicode char U+0441 (decimal 1089)
+   defining Unicode char U+0442 (decimal 1090)
+   defining Unicode char U+0443 (decimal 1091)
+   defining Unicode char U+0444 (decimal 1092)
+   defining Unicode char U+0445 (decimal 1093)
+   defining Unicode char U+0446 (decimal 1094)
+   defining Unicode char U+0447 (decimal 1095)
+   defining Unicode char U+0448 (decimal 1096)
+   defining Unicode char U+0449 (decimal 1097)
+   defining Unicode char U+044A (decimal 1098)
+   defining Unicode char U+044B (decimal 1099)
+   defining Unicode char U+044C (decimal 1100)
+   defining Unicode char U+044D (decimal 1101)
+   defining Unicode char U+044E (decimal 1102)
+   defining Unicode char U+044F (decimal 1103)
+   defining Unicode char U+0450 (decimal 1104)
+   defining Unicode char U+0451 (decimal 1105)
+   defining Unicode char U+0452 (decimal 1106)
+   defining Unicode char U+0453 (decimal 1107)
+   defining Unicode char U+0454 (decimal 1108)
+   defining Unicode char U+0455 (decimal 1109)
+   defining Unicode char U+0456 (decimal 1110)
+   defining Unicode char U+0457 (decimal 1111)
+   defining Unicode char U+0458 (decimal 1112)
+   defining Unicode char U+0459 (decimal 1113)
+   defining Unicode char U+045A (decimal 1114)
+   defining Unicode char U+045B (decimal 1115)
+   defining Unicode char U+045C (decimal 1116)
+   defining Unicode char U+045D (decimal 1117)
+   defining Unicode char U+045E (decimal 1118)
+   defining Unicode char U+045F (decimal 1119)
+   defining Unicode char U+0490 (decimal 1168)
+   defining Unicode char U+0491 (decimal 1169)
+   defining Unicode char U+0492 (decimal 1170)
+   defining Unicode char U+0493 (decimal 1171)
+   defining Unicode char U+0496 (decimal 1174)
+   defining Unicode char U+0497 (decimal 1175)
+   defining Unicode char U+0498 (decimal 1176)
+   defining Unicode char U+0499 (decimal 1177)
+   defining Unicode char U+049A (decimal 1178)
+   defining Unicode char U+049B (decimal 1179)
+   defining Unicode char U+049C (decimal 1180)
+   defining Unicode char U+049D (decimal 1181)
+   defining Unicode char U+04A0 (decimal 1184)
+   defining Unicode char U+04A1 (decimal 1185)
+   defining Unicode char U+04A2 (decimal 1186)
+   defining Unicode char U+04A3 (decimal 1187)
+   defining Unicode char U+04A4 (decimal 1188)
+   defining Unicode char U+04A5 (decimal 1189)
+   defining Unicode char U+04AA (decimal 1194)
+   defining Unicode char U+04AB (decimal 1195)
+   defining Unicode char U+04AE (decimal 1198)
+   defining Unicode char U+04AF (decimal 1199)
+   defining Unicode char U+04B0 (decimal 1200)
+   defining Unicode char U+04B1 (decimal 1201)
+   defining Unicode char U+04B2 (decimal 1202)
+   defining Unicode char U+04B3 (decimal 1203)
+   defining Unicode char U+04B6 (decimal 1206)
+   defining Unicode char U+04B7 (decimal 1207)
+   defining Unicode char U+04B8 (decimal 1208)
+   defining Unicode char U+04B9 (decimal 1209)
+   defining Unicode char U+04BA (decimal 1210)
+   defining Unicode char U+04BB (decimal 1211)
+   defining Unicode char U+04C0 (decimal 1216)
+   defining Unicode char U+04C1 (decimal 1217)
+   defining Unicode char U+04C2 (decimal 1218)
+   defining Unicode char U+04D0 (decimal 1232)
+   defining Unicode char U+04D1 (decimal 1233)
+   defining Unicode char U+04D2 (decimal 1234)
+   defining Unicode char U+04D3 (decimal 1235)
+   defining Unicode char U+04D4 (decimal 1236)
+   defining Unicode char U+04D5 (decimal 1237)
+   defining Unicode char U+04D6 (decimal 1238)
+   defining Unicode char U+04D7 (decimal 1239)
+   defining Unicode char U+04D8 (decimal 1240)
+   defining Unicode char U+04D9 (decimal 1241)
+   defining Unicode char U+04DA (decimal 1242)
+   defining Unicode char U+04DB (decimal 1243)
+   defining Unicode char U+04DC (decimal 1244)
+   defining Unicode char U+04DD (decimal 1245)
+   defining Unicode char U+04DE (decimal 1246)
+   defining Unicode char U+04DF (decimal 1247)
+   defining Unicode char U+04E2 (decimal 1250)
+   defining Unicode char U+04E3 (decimal 1251)
+   defining Unicode char U+04E4 (decimal 1252)
+   defining Unicode char U+04E5 (decimal 1253)
+   defining Unicode char U+04E6 (decimal 1254)
+   defining Unicode char U+04E7 (decimal 1255)
+   defining Unicode char U+04E8 (decimal 1256)
+   defining Unicode char U+04E9 (decimal 1257)
+   defining Unicode char U+04EC (decimal 1260)
+   defining Unicode char U+04ED (decimal 1261)
+   defining Unicode char U+04EE (decimal 1262)
+   defining Unicode char U+04EF (decimal 1263)
+   defining Unicode char U+04F0 (decimal 1264)
+   defining Unicode char U+04F1 (decimal 1265)
+   defining Unicode char U+04F2 (decimal 1266)
+   defining Unicode char U+04F3 (decimal 1267)
+   defining Unicode char U+04F4 (decimal 1268)
+   defining Unicode char U+04F5 (decimal 1269)
+   defining Unicode char U+04F8 (decimal 1272)
+   defining Unicode char U+04F9 (decimal 1273)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+3008 (decimal 12296)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+3009 (decimal 12297)
+   defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+27E8 (decimal 10216)
+   defining Unicode char U+27E9 (decimal 10217)
+   defining Unicode char U+FB00 (decimal 64256)
+   defining Unicode char U+FB01 (decimal 64257)
+   defining Unicode char U+FB02 (decimal 64258)
+   defining Unicode char U+FB03 (decimal 64259)
+   defining Unicode char U+FB04 (decimal 64260)
+   defining Unicode char U+FB05 (decimal 64261)
+   defining Unicode char U+FB06 (decimal 64262)
+))
+LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 1
+16.
+
+(c:/texlive/2024/texmf-dist/tex/latex/cyrillic/t2acmr.fd
+File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)<<t2a.cmap>>)
+(c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count268
+\l__pdf_internal_box=\box52
+)
+(./Star Soft Documentation.aux)
+\openout1 = `"Star Soft Documentation.aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+
+(c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count269
+\scratchdimen=\dimen144
+\scratchbox=\box53
+\nofMPsegments=\count270
+\nofMParguments=\count271
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count272
+\MPscratchDim=\dimen145
+\MPnumerator=\count273
+\makeMPintoPDFobject=\count274
+\everyMPtoPDFconversion=\toks22
+) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(c:/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+
+(c:/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+))
+(c:/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(c:/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(c:/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))<<ot1.cmap>><<oml.cmap>><<oms.cmap>><<omx.cmap>>
+LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+
+
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+
+
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(./Star Soft Documentation.toc
+
+[1
+
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2024/
+texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}])
+\tf@toc=\write3
+\openout3 = `"Star Soft Documentation.toc"'.
+
+
+Overfull \hbox (9.01501pt too wide) in paragraph at lines 38--39
+[]\T2A/cmr/m/n/12 Only ex-clu-sions are "Tem-per-a-ture_change.py" where Si is 
+used and method
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--47
+
+ []
+
+
+
+[2]
+Overfull \hbox (78.41724pt too wide) in paragraph at lines 70--71
+[]\T2A/cmr/m/n/12 Differential equa-tions solv-ing mod-ule: Folder name: "Dif-f
+er-en-tials_solving_methods".
+ []
+
+
+Overfull \hbox (77.96046pt too wide) in paragraph at lines 74--75
+[]\T2A/cmr/m/n/12 Electron / positron ma-g-a-n-ing mod-ule: Folder name: "Elec-
+tron_positron_operations".
+ []
+
+
+Overfull \hbox (67.57948pt too wide) in paragraph at lines 76--77
+[]\T2A/cmr/m/n/12 Wolrd con-stants ini-tial-iza-tion mod-ule: Folder name: "Wor
+ld_constants_initializer".
+ []
+
+
+Overfull \hbox (32.3425pt too wide) in paragraph at lines 78--79
+[]\T2A/cmr/m/n/12 Elements tech-ni-cal op-er-a-tions mod-ule: Folder name: "El-
+e-ments_opertaions".
+ []
+
+
+Overfull \hbox (32.12032pt too wide) in paragraph at lines 78--79
+\T2A/cmr/m/n/12 Con-tains many tech-ni-cal meth-ods for parc-ing parts of "Sim-
+u-la-tion_input.txt"
+ []
+
+
+Overfull \hbox (2.18741pt too wide) in paragraph at lines 80--81
+[]\T2A/cmr/m/n/12 Neutrino mod-ule: Folder name: "Neu-trino_spectrum": Con-tain
+s meth-
+ []
+
+
+
+[3{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Overfull \hbox (0.25542pt too wide) in paragraph at lines 84--85
+[]\T2A/cmr/m/n/12 Resonant re-ac-tions mod-ule: Folder name: "Res-o-nant_reacti
+ons". Con-
+ []
+
+
+
+[4]
+Overfull \hbox (0.57945pt too wide) in paragraph at lines 132--132
+[]\T2A/cmr/bx/n/12 Description\T2A/cmr/m/n/12 : Uses "Sim-u-la-tion_input" and 
+"El-e-ments_data.txt" to cre-
+ []
+
+
+
+[5]
+Overfull \hbox (1.63202pt too wide) in paragraph at lines 158--158
+\T2A/cmr/m/n/12 (nav-i-ga-tion part)][concentrations] with nav-i-ga-tion [1][Nu
+m-ber of the el-e-ment]. 
+ []
+
+
+Overfull \hbox (22.06721pt too wide) in paragraph at lines 210--210
+[]\T2A/cmr/bx/n/12 Courant_diff_solve(Unresonant_reactions, Res-o-nant_reaction
+s, 
+ []
+
+
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+[]\T2A/cmr/bx/n/12 Decay_reactions, Pro-cesses, Speed, Time,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+\T2A/cmr/bx/n/12 Smart, M_nuc, Con-cen-tra-tions, Mass_fractions,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+\T2A/cmr/bx/n/12 R_core, T, ro, Av-er-age_per_particle_weight,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+\T2A/cmr/bx/n/12 Elec-tron_unresonant_reaction_effect,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+\T2A/cmr/bx/n/12 Positron_unresonant_reaction_effect,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+\T2A/cmr/bx/n/12 Elec-tron_resonant_reaction_effect,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+\T2A/cmr/bx/n/12 Positron_resonant_reaction_effect,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+\T2A/cmr/bx/n/12 Elec-tron_decay_reaction_effect,
+ []
+
+
+Underfull \hbox (badness 5119) in paragraph at lines 210--210
+\T2A/cmr/bx/n/12 Positron_decay_reaction_effect, Elec-tron_process_effect,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+\T2A/cmr/bx/n/12 Positron_process_effect, El-e-ments_burning_time,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--210
+\T2A/cmr/bx/n/12 Burn-ing_speed, El-e-ments, Elec-trons_concentration,
+ []
+
+
+Overfull \hbox (18.73056pt too wide) in paragraph at lines 210--210
+\T2A/cmr/m/n/12 ma-trix, Res-o-nant_reactions [ar-ray] - res-o-nant re-ac-tions
+ ma-trix, De-cay_reactions
+ []
+
+
+Overfull \hbox (36.64716pt too wide) in paragraph at lines 210--210
+\T2A/cmr/m/n/12 [float] - av-er-age per par-ti-cle molec-u-lar weight, Elec-tro
+n_unresonant_reaction_effect
+ []
+
+
+
+[7]
+
+[8]
+Overfull \hbox (6.6614pt too wide) in paragraph at lines 210--210
+\T2A/cmr/m/n/12 here is cal-cu-lated based on dt with Tem-per-a-ture_change_spe
+ed_count(<...>)
+ []
+
+
+Overfull \hbox (34.75449pt too wide) in paragraph at lines 210--211
+\T2A/cmr/m/n/12 trons_burning_speed [float] - burn-ing speed of elec-trons, Pos
+itrons_burning_speed
+ []
+
+
+Overfull \hbox (8.38461pt too wide) in paragraph at lines 210--211
+\T2A/cmr/m/n/12 Kelvins, dt [float] - time step of the mod-el-ing in years, El-
+e-ments_burning_time
+ []
+
+
+
+[9]
+Overfull \hbox (51.55025pt too wide) in paragraph at lines 224--224
+[]\T2A/cmr/bx/n/12 Elements_burning_speed_state_display(Elements_burning_speed)
+\T2A/cmr/m/n/12 : 
+ []
+
+
+Overfull \hbox (8.78441pt too wide) in paragraph at lines 224--224
+[]\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : El-e-ments_burning_speed [
+ar-ray] - stores burn-ing speeds
+ []
+
+
+
+[10]
+Overfull \hbox (38.33406pt too wide) in paragraph at lines 228--228
+[]\T2A/cmr/bx/n/12 Elements_burning_time_state_display(Elements_burning_time)\T
+2A/cmr/m/n/12 : 
+ []
+
+
+Overfull \hbox (85.16846pt too wide) in paragraph at lines 236--236
+[]\T2A/cmr/bx/n/12 El_pos_state_display(Electrons_concentration, Positrons_conc
+entration)\T2A/cmr/m/n/12 : 
+ []
+
+
+
+[11]
+Overfull \hbox (16.12843pt too wide) in paragraph at lines 240--240
+[]\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : Time [float] - cur-rent si
+m-u-la-tion time in years, Time_limit
+ []
+
+
+Overfull \hbox (54.9578pt too wide) in paragraph at lines 250--250
+[]\T2A/cmr/bx/n/12 General_condition_display(Concentrations, El-e-ments_burning
+_time,
+ []
+
+
+
+[12]
+Overfull \hbox (2.95802pt too wide) in paragraph at lines 260--261
+[]\T2A/cmr/bx/n/12 Output vari-ables\T2A/cmr/m/n/12 : Elec-tron_unresonant_reac
+tion_effect [ar-ray] - stores
+ []
+
+
+Overfull \hbox (128.98843pt too wide) in paragraph at lines 264--265
+\T2A/cmr/m/n/12 duces or con-sumes) with nav-i-ga-tion [Num-ber of res-o-nant r
+e-ac-tion], Positron_resonant_reaction_effect
+ []
+
+
+
+[13]
+Overfull \hbox (155.09317pt too wide) in paragraph at lines 268--269
+\T2A/cmr/m/n/12 duces or con-sumes) with nav-i-ga-tion [Num-ber of un-res-o-nan
+t re-ac-tion], Positron_unresonant_reaction_effect
+ []
+
+
+Overfull \hbox (21.50905pt too wide) in paragraph at lines 286--286
+[]\T2A/cmr/bx/n/12 Electron_positron_initial_concentration_count(Elements, Con-
+
+ []
+
+
+
+[14]
+Overfull \hbox (82.69955pt too wide) in paragraph at lines 299--299
+[]\T2A/cmr/bx/n/12 Electron_positron_burning_speed(Electron_unresonant_reaction
+_effect, 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--299
+[]\T2A/cmr/bx/n/12 Positron_unresonant_reaction_effect, Un-res-o-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--299
+\T2A/cmr/bx/n/12 nant_reactions, Elec-tron_resonant_reaction_effect,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--299
+\T2A/cmr/bx/n/12 Positron_resonant_reaction_effect, Res-o-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--299
+\T2A/cmr/bx/n/12 nant_reactions, Elec-tron_decay_reaction_effect,
+ []
+
+
+Underfull \hbox (badness 6575) in paragraph at lines 299--299
+\T2A/cmr/bx/n/12 Positron_decay_reaction_effect, De-cay_reactions, Elec-
+ []
+
+
+
+[15]
+
+[16]
+Overfull \hbox (29.37231pt too wide) in paragraph at lines 325--325
+[]\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : Elec-trons_burning_speed [
+float], Positrons_burning_speed
+ []
+
+
+Overfull \hbox (58.21407pt too wide) in paragraph at lines 325--325
+\T2A/cmr/m/n/12 [float] - Rates of change in elec-tron and positron con-cen-tra
+-tions, Elec-trons_concentration
+ []
+
+
+
+[17]
+Overfull \hbox (47.64583pt too wide) in paragraph at lines 351--351
+\T2A/cmr/m/n/12 stores con-cen-tra-tions of el-e-ments in for-mat [el-e-ments (
+nav-i-ga-tion part)][concentrations]
+ []
+
+
+
+[18]
+
+[19]
+Overfull \hbox (6.18228pt too wide) in paragraph at lines 393--394
+[]\T2A/cmr/bx/n/12 Output vari-ables\T2A/cmr/m/n/12 : Av-er-age_per_particle_we
+ight [float] - Av-er-age molec-
+ []
+
+
+Overfull \hbox (38.70894pt too wide) in paragraph at lines 401--401
+[]\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : line [string] - re-ac-tion
+`s equa-tion from "Sim-u-la-tion_input.txt",
+ []
+
+
+
+[20]
+Overfull \hbox (23.3849pt too wide) in paragraph at lines 405--405
+[]\T2A/cmr/bx/n/12 Read_the_resonant_reaction(line, Re-ac-tion_number, El-e-men
+ts,
+ []
+
+
+Overfull \hbox (38.70894pt too wide) in paragraph at lines 405--405
+[]\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : line [string] - re-ac-tion
+`s equa-tion from "Sim-u-la-tion_input.txt",
+ []
+
+
+Overfull \hbox (6.17523pt too wide) in paragraph at lines 409--409
+[]\T2A/cmr/bx/n/12 Read_the_decay_reaction(line, Re-ac-tion_number, El-e-ments,
+
+ []
+
+
+Overfull \hbox (41.97202pt too wide) in paragraph at lines 409--409
+[]\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : line [string] - re-ac-tion
+`s` equa-tion from "Sim-u-la-tion_input.txt",
+ []
+
+
+Overfull \hbox (29.96384pt too wide) in paragraph at lines 413--413
+[]\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : line [string] - pro-cess` 
+equa-tion from "Sim-u-la-tion_input.txt",
+ []
+
+
+
+[21]
+
+[22]
+Overfull \hbox (1.96101pt too wide) in paragraph at lines 462--462
+[]\T2A/cmr/bx/n/12 Neutrino_unresonant_reactions_matrix for re-ac-tion with num
+-
+ []
+
+
+Overfull \hbox (16.15446pt too wide) in paragraph at lines 462--462
+[]\T2A/cmr/m/n/12 Neutrino_unresonant_reactions_matrix[0][$\OML/cmm/m/it/12 i$\
+T2A/cmr/m/n/12 ] - re-ac-tion type (0 - neutrino-
+ []
+
+
+Overfull \hbox (1.47055pt too wide) in paragraph at lines 462--462
+[]\T2A/cmr/m/n/12 Neutrino_unresonant_reactions_matrix[2][$\OML/cmm/m/it/12 i$\
+T2A/cmr/m/n/12 ] - neu-trino chan-nel en-ergy
+ []
+
+
+Overfull \hbox (1.47055pt too wide) in paragraph at lines 462--462
+[]\T2A/cmr/m/n/12 Neutrino_unresonant_reactions_matrix[4][$\OML/cmm/m/it/12 i$\
+T2A/cmr/m/n/12 ] - neu-trino chan-nel en-ergy
+ []
+
+
+
+[23]
+Overfull \hbox (3.1021pt too wide) in paragraph at lines 478--478
+[]\T2A/cmr/m/n/12 Neutrino_resonant_reactions_matrix[0][$\OML/cmm/m/it/12 i$\T2
+A/cmr/m/n/12 ] - re-ac-tion type (0 - neutrino-
+ []
+
+
+Overfull \hbox (0.49161pt too wide) in paragraph at lines 478--478
+[]\T2A/cmr/m/n/12 Neutrino_resonant_reactions_matrix[1][$\OML/cmm/m/it/12 i$\T2
+A/cmr/m/n/12 ] - max-i-mum neu-trino en-ergy
+ []
+
+
+Overfull \hbox (11.91238pt too wide) in paragraph at lines 478--478
+[]\T2A/cmr/m/n/12 Neutrino_resonant_reactions_matrix[3][$\OML/cmm/m/it/12 i$\T2
+A/cmr/m/n/12 ] - prob-a-bil-ity of neu-trino chan-
+ []
+
+
+Overfull \hbox (11.91238pt too wide) in paragraph at lines 478--478
+[]\T2A/cmr/m/n/12 Neutrino_resonant_reactions_matrix[5][$\OML/cmm/m/it/12 i$\T2
+A/cmr/m/n/12 ] - prob-a-bil-ity of neu-trino chan-
+ []
+
+
+
+[24]
+Overfull \hbox (6.82204pt too wide) in paragraph at lines 510--510
+[]\T2A/cmr/m/n/12 Neutrino_processes_matrix[2][$\OML/cmm/m/it/12 i$\T2A/cmr/m/n
+/12 ] - neu-trino chan-nel en-ergy for first chan-
+ []
+
+
+Overfull \hbox (54.69942pt too wide) in paragraph at lines 514--514
+[]\T2A/cmr/bx/n/12 Neutrino_spectrum_create(Neutrino_unresonant_reactions_matri
+x,
+ []
+
+
+Overfull \hbox (8.3844pt too wide) in paragraph at lines 514--514
+\T2A/cmr/bx/n/12 Un-res-o-nant_reactions, Neu-trino_resonant_reactions_matrix,
+ []
+
+
+Overfull \hbox (2.15953pt too wide) in paragraph at lines 514--514
+\T2A/cmr/bx/n/12 Res-o-nant_reactions, Neu-trino_decay_reactions_matrix, De-
+ []
+
+
+Overfull \hbox (15.81865pt too wide) in paragraph at lines 514--514
+\T2A/cmr/bx/n/12 cay_reactions, Neu-trino_processes_matrix, Pro-cesses, R_core,
+
+ []
+
+
+
+[25]
+
+[26]
+Overfull \hbox (0.57945pt too wide) in paragraph at lines 535--535
+[]\T2A/cmr/bx/n/12 Description\T2A/cmr/m/n/12 : Uses "Sim-u-la-tion_input" and 
+"El-e-ments_data.txt" to cre-
+ []
+
+
+Overfull \hbox (2.30249pt too wide) in paragraph at lines 543--543
+[]\T2A/cmr/bx/n/12 Description\T2A/cmr/m/n/12 : Ap-plies Pro-cesses_formulas_co
+ntainer(Processes, T, N_a,
+ []
+
+
+
+[27]
+Overfull \hbox (0.57945pt too wide) in paragraph at lines 601--601
+[]\T2A/cmr/bx/n/12 Description\T2A/cmr/m/n/12 : Uses "Sim-u-la-tion_input" and 
+"El-e-ments_data.txt" to cre-
+ []
+
+
+
+[28]
+
+[29]
+Overfull \hbox (5.33205pt too wide) in paragraph at lines 601--601
+\T2A/cmr/m/n/12 (Resonant_reactions[23][$\OML/cmm/m/it/12 i$\T2A/cmr/m/n/12 ][0
+][$\OML/cmm/m/it/12 j$\T2A/cmr/m/n/12 ] and Resonant_reactions[23][$\OML/cmm/m/
+it/12 i$\T2A/cmr/m/n/12 ][1][$\OML/cmm/m/it/12 j$\T2A/cmr/m/n/12 ]
+ []
+
+
+Overfull \hbox (17.4864pt too wide) in paragraph at lines 635--635
+[]\T2A/cmr/bx/n/12 Resonant_reactions_matrix_update(Resonant_reactions, Con-
+ []
+
+
+Overfull \hbox (0.32674pt too wide) in paragraph at lines 635--635
+[]\T2A/cmr/m/n/12 Also, both in-te-grals are nor-mal-ized us-ing In-te-gra-tion
+_trapz(x, y) method.
+ []
+
+
+
+[30]
+Overfull \hbox (10.84773pt too wide) in paragraph at lines 641--641
+[]\T2A/cmr/bx/n/12 Resonant_reactions_reactions_count(Resonant_reactions, Pi,
+ []
+
+
+Overfull \hbox (22.45732pt too wide) in paragraph at lines 675--675
+[]\T2A/cmr/bx/n/12 Temperature_change_speed_count(Unresonant_reactions, Res-
+ []
+
+
+Overfull \hbox (27.3103pt too wide) in paragraph at lines 675--675
+\T2A/cmr/bx/n/12 o-nant_reactions, De-cay_reactions, Pro-cesses, T_surface, R_s
+tar,
+ []
+
+
+
+[31]
+Overfull \hbox (21.41057pt too wide) in paragraph at lines 675--675
+[]\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : dt [float] - time step of 
+the mod-el-ing, Un-res-o-nant_reactions
+ []
+
+
+Overfull \hbox (46.34308pt too wide) in paragraph at lines 683--683
+[]\T2A/cmr/bx/n/12 Temperature_change_time_count(T, Tem-per-a-ture_change_speed
+)\T2A/cmr/m/n/12 : 
+ []
+
+
+
+[32]
+
+[33]
+Overfull \hbox (12.32652pt too wide) in paragraph at lines 722--722
+[]\T2A/cmr/bx/n/12 Unresonant_reactions_matrix_update(Unresonant_reactions,
+ []
+
+
+Overfull \hbox (5.61429pt too wide) in paragraph at lines 740--740
+[]\T2A/cmr/bx/n/12 Unresonant_reactions_count(Unresonant_reactions, Con-cen-
+ []
+
+
+
+[34]
+
+[35]
+Overfull \hbox (68.62535pt too wide) in paragraph at lines 799--800
+\T2A/cmr/m/n/12 com-pli-cated for-mu-las for them are hard-written into Pro-ces
+ses_formulas_container(<...>)
+ []
+
+
+
+[36]
+Overfull \hbox (7.69719pt too wide) in paragraph at lines 809--810
+[]\T2A/cmr/m/n/12 Resonant, De-cay and Pro-cesses: Com-po-nents_(Energy out-put
+)_(Neutrino
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 825--826
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 827--828
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 829--830
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 831--832
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 833--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 835--836
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 837--838
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 839--840
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 841--842
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 843--844
+
+ []
+
+
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 845--846
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 847--848
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 849--850
+
+ []
+
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
+883.
+(c:/texlive/2024/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Overfull \hbox (85.30316pt too wide) in paragraph at lines 893--893
+[]\T2A/cmtt/m/n/10.95 [Output time]>>>Succesfully created unresonant reaction m
+atrix with [int] reactions.[] 
+ []
+
+
+
+[38]
+Overfull \hbox (73.98642pt too wide) in paragraph at lines 893--893
+[]\T2A/cmtt/m/n/10.95 [Output time]>>>Succesfully created resonant reaction mat
+rix with [int] reactions.[] 
+ []
+
+
+Overfull \hbox (57.0113pt too wide) in paragraph at lines 893--893
+[]\T2A/cmtt/m/n/10.95 [Output time]>>>Succesfully created decay reaction matrix
+ with [int] reactions.[] 
+ []
+
+
+Overfull \hbox (28.71945pt too wide) in paragraph at lines 893--893
+[]\T2A/cmtt/m/n/10.95 [Output time]>>>Succesfully created processes matrix with
+ [int] reactions.[] 
+ []
+
+
+Overfull \hbox (72.07466pt too wide) in paragraph at lines 908--908
+[]\T2A/cmtt/m/n/6 [Output time]>>>General info: Mass fractions: Passed time, pe
+rcentage of time (from time limit), <Concentrations>, El. conc., Posit. conc., 
+Temp.[] 
+ []
+
+
+Overfull \hbox (68.88794pt too wide) in paragraph at lines 908--908
+[]\T2A/cmtt/m/n/6 [Output time]>>>Reactions speed: Unres.: [<Reactions rates>] 
+Res.: [<Reactions rates>] Decay: [<Reactions rates>] Processes: [<Reactions rat
+es>][] 
+ []
+
+
+
+[39] (./Star Soft Documentation.aux)
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-07-20>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 3424 strings out of 473578
+ 53651 string characters out of 5732242
+ 1935960 words of memory out of 5000000
+ 26239 multiletter control sequences out of 15000+600000
+ 572743 words of font info for 76 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 59i,9n,67p,4347b,328s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
+live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2024/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/
+2024/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2024/texmf
+-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2024/texmf-dist/font
+s/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm1440.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-su
+per/sfrm2074.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt08
+00.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on "Star Soft Documentation.pdf" (39 pages, 321869 bytes).
+PDF statistics:
+ 212 PDF objects out of 1000 (max. 8388607)
+ 144 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+

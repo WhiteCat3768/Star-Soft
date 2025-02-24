@@ -1,0 +1,932 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amssymb}
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+
+\title{"Star Soft" Documentation}
+\author{Ponomarev Daniil}
+\date{August 2024}
+
+\newcommand{\namefunction}[4]{
+  \begin{itemize}
+    \item \textbf{#1}:
+  \end{itemize}
+  
+  \textbf{Input variables}: #2.
+  
+  \textbf{Description}: #3.
+  
+  \textbf{Output variables}: #4.
+}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents{}
+
+\section{Introduction:}
+
+"Star Soft" is a python modeling software that allows you to set up and run simulations of stellar cores, including evolution of mass fractions of elements, electron and positron concentrations, temperature of the core and outside neutrino flux.
+
+\section{Measuresment system:}
+
+Most of the modeling uses measurement system called "SA - Star Astro" with core units being: gramm, year, santimeter, mole, Kelvin, elemental charge, Gauss.
+
+Only exclusions are "Temperature\_change.py" where Si is used and method "Resonant\_reactions\_matrix\_update(<...>)" in "Resonant\_reactions.py" where Si with MeV for Breit\_Wigner`s formula are used.
+
+Secondary units are called SA[name], futher are ratios between them and there SI counterparts.
+
+\vspace{1em}
+
+\noindent - SAJoul = $10^{22}$ Joul \\
+- SAWatt = $3,154 \times 10^{29}$ Watt \\
+- SAPascal = $10^{16}$ Pascal \\
+
+\section{Requiered external libraries:}
+
+For stable forkflow Star Soft 4.9 requers a list of external Python libraries:
+
+\begin{itemize}
+\item matplotlib;
+\item scipy;
+\item numpy.
+\end{itemize}
+
+\section{Components and structure:}
+
+Current version 4.9 of "Star Soft" consists of 17 components, including: main script, 11 modules, output visualiser, 2 input text files and 2 output text files.
+
+\begin{itemize}
+
+\item Main script: Folder name: "Star\_Soft\_main". Performs general management of modules and variables, parcing of general simulation settings, some minor calculations and turning text modeling output into graphs using mathplotlib.pyplot at the end.
+
+\item Nuclear decay reactions module: Folder name: "Decay\_reactions". Contains a pack of methods for reading and storing information about nuclear decay reactions and calculating there rates.
+
+\item "Simulation\_output.txt" parcer: Folder name: "Parcer". A script that turns text modeling output into graphs using mathplotlib.pyplot.
+
+\item Differential equations solving module: Folder name: "Differentials\_solving\_methods". Contains methods (in current version 1) for solving systems of differential equations that describe rate of concentrations of components change.
+
+\item Display module: Folder name: "Displays". Contains methods for displaying states of different parts of modeling in a comfortable to read way.
+
+\item Electron / positron maganing module: Folder name: "Electron\_positron\_operations". Contains methods for: storing information about reaction`s effect on electron / positron concentrations, electron / positron initial concentration count, rates of there concentration change.
+
+\item Wolrd constants initialization module: Folder name: "World\_constants\_initializer". Constains a method to parse input file "World\_constants.txt" and turn each line constaining a constant info in format "[Name] = [Value] [Measure units]" into global constant with coresponding name and value.
+
+\item Elements technical operations module: Folder name: "Elements\_opertaions". Contains many technical methods for parcing parts of "Simulation\_input.txt" aand inside data as well as some calculating methods.
+
+\item Neutrino module: Folder name: "Neutrino\_spectrum": Contains methods for: storing information about reaction`s neutrino emission and calculation neutrino flux / energy spectrum based on rates of reactions.
+
+\item Processes module: Folder name: "Processes": Contains  a pack of methods for reading and storing information about all types of reactions, calculating and updating there rates, based on methods from article [1] about nuclear reactions rates.
+
+\item Resonant reactions module: Folder name: "Resonant\_reactions". Contains a pack of methods for reading and storing information about resonant reaction and calculating there cross-sections and rates.
+
+\item Temperature module: Folder name: "Temperature\_change". Contains a method that calculates energy impacts and loses of ther star, so change of the temperature of its core.
+
+\item Unresonant reactions module: Folder name: "Unresonant\_reactions". Contains a pack of methods for reading and storing information about unresonant reactions and calculating there rates.
+
+\item Configs input file: Folder name: "Simulation\_input". Main configuration file of the modeling. Contains parametrs of simulated star as well as all of the reactions and constants that determine there rates.
+
+\item Wolrd constants file: Folder name: "World\_constants". Contains class with all world constants from which they can be called using there name.
+
+\item Elements data file: Folder name: "Elements\_data". Contains list of all used elements (there cores) as well as there mass, charge and spin of them.
+
+\item Data output file: Folder name: "Simulation\_output". Main output file that is used to store modeling data in text format. Not designed to be read manually.
+
+\item Logs life: Folder name: "Logs". Secondary output file that contains logs of simulation, designed for troubleshooting.
+
+\end{itemize}
+
+\section{Decay\_reactions:}
+
+\vspace{1em}
+
+\namefunction{Decay\_reactions\_matrix\_create(Elements, R, T, p0, T0)}{Elements [array] - copy of "Elements\_data.txt"; R [float] - universal gas constant in SI; T [float] - currect core temperature in Kelvins; p0 [float] - normal atmospherical pressure in pascals; T0 [float] - normal temperature in Kelvin}{Uses "Simulation\_input" and "Elements\_data.txt" to create a partially filled template for "Decay\_reactions":
+
+\textbf{Decay\_reactions for reaction with number $i$:}
+\begin{itemize}
+	\item Decay\_reactions[0][$i$] - initial element;
+	\item Decay\_reactions[1][$i$] - mass of initial element;
+	\item Decay\_reactions[2][$i$] - charge of initial element;
+	\item Decay\_reactions[3][$i$] - spin of initial element;
+	\item Decay\_reactions[4][$i$] - first resulting element;
+	\item Decay\_reactions[5][$i$] - mass of first resulting element;
+	\item Decay\_reactions[6][$i$] - charge of first resulting element;
+	\item Decay\_reactions[7][$i$] - spin of first resulting element;
+	\item Decay\_reactions[8][$i$] - second resulting element;
+	\item Decay\_reactions[9][$i$] - mass of second first resulting element;
+	\item Decay\_reactions[10][$i$] - charge of second resulting element;
+	\item Decay\_reactions[11][$i$] - spin of second resulting element;
+	\item Decay\_reactions[12][$i$] - normal half-life of initial element;	
+	\item Decay\_reactions[13][$i$] - constant of the reaction (determines dependence from temperature and density of the plasma);
+	\item Decay\_reactions[14][$i$] - type of the reaction (1 - alpha decay, 2 - beta decay (+/-));
+	\item Decay\_reactions[15][$i$] - energetic reaction effect;
+	\item Decay\_reactions[16][$i$] - normal temperature in Kelvin;
+	\item Decay\_reactions[17][$i$] - normal density of the substance from the initial element (as a gas);
+	\item Decay\_reactions[18][$i$] - modified half-life of the initial element;
+	\item Decay\_reactions[19][$i$] - number of reactions per $cm^{-3}$ per $s^{-1}$.
+\end{itemize}
+
+}{Decay\_recationss [array] - decay reactions matrix}
+
+\vspace{1em}
+
+\namefunction{Decay\_reactions\_matrix\_update(Decay\_reactions, ro, T)}{Decay\_reactions [array] - decay reactions matrix; ro - current core density in $g/cm^3$ ; T [float] - currect core temperature in Kelvin}{This method is supposed to adjust half-lifes of elemnts nucleus to current density and temperature of the core. I NOT USED AT SHALL NOT BE TOUCHED!}{Decay\_reactions [array] - decay reactions matrix}
+
+\vspace{1em}
+
+\namefunction{Decay\_reactions\_count(Decay\_reactions, Concentrations)}{Decay\_reactions [array] - decay reactions matrix; Concentrations - [array] stores concentrations of elements in format [elements (navigation part)][concentrations] with navigation [1][Number of the element]}{Calculates rates of nuclear decay recations (not reactions change) based on formula for nucler decay:
+
+If n is concentration of nuclei with half-life T, time is t, then:
+
+\[
+n(t) = \frac{n_0}{2^{\frac{t}{T}}}
+\]
+
+Then we can calculate the derivative of the concentration over time:
+
+\[
+\dot{n} = \frac{dn}{dt} = \frac{-n_0 \cdot \ln(2)}{T \cdot 2^{\frac{t}{T}}}
+\]
+
+And since on every step of calculation we act as t = 0, that can be transformed into:
+
+\[\dot{n} = \frac{dn}{dt} = \frac{-n_0 \cdot \ln(2)}{T}\]
+
+}{Decay\_reactions [array] - decay reactions matrix}
+
+\section{Differentials\_solving\_methods:}
+
+\vspace{1em}
+
+\namefunction{Courant\_diff\_solve(Unresonant\_reactions, Resonant\_reactions, \begin{sloppypar}Decay\_reactions, Processes, Speed, Time, Smart, M\_nuc, Concentrations, Mass\_fractions, R\_core, T, ro, Average\_per\_particle\_weight, Electron\_unresonant\_reaction\_effect, Positron\_unresonant\_reaction\_effect, Electron\_resonant\_reaction\_effect, Positron\_resonant\_reaction\_effect, Electron\_decay\_reaction\_effect, Positron\_decay\_reaction\_effect, Electron\_process\_effect, Positron\_process\_effect, Elements\_burning\_time, Burning\_speed, Elements, Electrons\_concentration, Positrons\_concentration, T\_surface, R\_star, i, R, N\_a)\end{sloppypar}}{Unresonant\_reactions [array] - unresonant reactions matrix, Resonant\_reactions [array] - resonant reactions matrix, Decay\_reactions [array] - decay reactions matrix, Processes [array] - processes matrix, Speed [float] - Courant`s number, Time [float] - virtual time from start of the modeling in years, Smart [bool] - parameter that determins if system can adjust Courant`s number in the process (dosent work in current version), M\_nuc [float] - atomic unit of mass in grams, Concentrations [array] - stores concentrations of elements in format [elements (navigation part)][concentrations] with navigation [1][Number of the element], Mass\_fractions - [array] stores mass fractions of elements in format [elements (navigation part)][mass fractions] with navigation [1][Number of elements], R\_core [float] - radius of the core of the star in cantimeters, T [float] - current core temperature in Kelvins, ro [float] - current core density in $g/cm^3$, Average\_per\_particle\_weight [float] - average per particle molecular weight, Electron\_unresonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read unresonant reaction], Positron\_unresonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read unresonant reaction], Electron\_resonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read resonant reaction], Positron\_resonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read resonant reaction], Electron\_decay\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read decay reaction], Positron\_decay\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read decay reaction], Electron\_process\_effect [array] - stores process` impacts on concentrations of electrons (how many process produces or consumes) in format [Process` impact] with navigation [Number of read process], Positron\_process\_effect [array] - stores process` impacts on concentrations of positrons (how many process produces or consumes) in format [Process` impact] with navigation [Number of read process], Elements\_burning\_time [array] - stores burning times of elements in format [Elements (navigation part)][Elements burning time] with navigation [1][Number of the element], Burning\_speed [array] - stores burning times of elements in format [Elements (navigation part)][Elements burning speed] with navigation [1][Number of the element], Elements [array] - copy of "Elements\_data.txt", Electrons\_concentration - concentration of electrons, Positrons\_concentration - concentration of positrons, T\_surface - surface star temperature in Kelvins, R\_star, i [int] - degrees of freedom, R [float] - universal gas constant in SI, N\_a [float] - Avogadro`s number in SI}{Calculates rates of all recations using coresponding calculating methods for there types, turns there rates into rates of changes of concentrations of elements (burning speed for short):
+
+\[\frac{dn_i}{dt} = -a\sum_{i = 1}^{k} R_i\],
+
+where for nuclei i with k reactions that include it where "a" is nuclear factor coresnonding to nuclei "i" (a is positive if nuclei i is in right side of nuclear equation and vice versa).
+
+Then it calculates there burning times using there concentrations. If burning speed of an element is negative then there burning time is simply concentration divided by burning speed:
+
+\[t_i = \frac{n_i}{\dot{n_i}}\], where $t_i$ is burning time of nuclei "i", $n_i$ is its current concentration and $\dot{n}$ is its bruning speed.
+
+Else if burning speed of an element is positive:
+
+\[t_i = \frac{n_{max_i} - n_i}{-\dot{n_i}}\], where everything is the same despite $n_{max}$ is its maximum possible concentration of nuclei "i" which is calculated like:
+
+\[n_{max} = \frac{\rho}{m_i \cdot M_{nuc}}\]
+
+The same thing (excluding max concentration) is repeated for electrons and positrons and temperature of the core.
+
+If burning speed of electrons is negative:
+
+\[t_{e-} = \frac{n_{e-}}{-\dot{n_{e-}}}\]
+
+otherwise:
+
+\[t_{e-} = \infty\]
+
+Same for positrons:
+
+\[t_{e+} = \frac{n_{e+}}{-\dot{n_{e+}}}\]
+
+otherwise:
+
+\[t_{e+} = \infty\]
+
+And for temperature if its` change speed is negative (temperature change here is calculated based on dt with Temperature\_change\_speed\_count(<...>) method.):
+
+\[t_{T} = \frac{T}{-\dot{T}}\]
+
+otherwise if it is poritive:
+
+\[t_{T} = \infty\]
+
+Then minimum of burning times of electrons, positrons, elements and core temperature change is multiplied by less then zero ratio called Courant`s number ("Speed" in code) and the result is the time step of the modeling (dt in code). It also uses modified explicit Euler`s method but multiplies step of time axis by Courant`s number between 0 and 1 which helps it to stay stable:
+
+\[t_{step} = min(t) \cdot C\]
+
+}{Burning\_speed [array] - stores burning times of elements in format [Elements (navigation part)][Concentrations] with navigation [1][Number of the element], Speed [float] - Courant`s number, Electrons\_burning\_speed [float] - burning speed of electrons, Positrons\_burning\_speed [float] - burning speed of positrons, dT [float] - change of core temperature in Kelvins, dt [float] - time step of the modeling in years, Elements\_burning\_time [array] - stores burning times of elements in format [Elements (navigation part)][Elements burning time] with navigation [1][Number of the element]}
+
+\section{Displays:}
+
+\vspace{1em}
+
+\namefunction{Simulation\_state\_display(Mass\_fractions)}{Mass\_fractions [array] - stores mass fractions of elements in format [elements (navigation part)][mass fractions] with navigation [0][Number of element] for element names and [1][Number of element] for mass fraction values}{This function formats the mass fractions of elements into a string for display. Each element's name and its corresponding mass fraction are included in the output string}{Answer [string] - a formatted string containing element names and their mass fractions}
+
+\vspace{1em}
+
+\namefunction{Concentrations\_state\_display(Concentrations)}{Concentrations [array] - stores concentrations of elements in format [elements (navigation part)][concentrations] with navigation [0][Number of element] for element names and [1][Number of element] for concentration values}{This function formats the concentrations of elements into a string for display. Each element's name and its corresponding concentration are included in the output string}{Answer [string] - a formatted string containing element names and their concentrations}
+
+\vspace{1em}
+
+\namefunction{Elements\_burning\_speed\_state\_display(Elements\_burning\_speed)}{Elements\_burning\_speed [array] - stores burning speeds of elements in format [elements (navigation part)][burning speeds] with navigation [0][Number of element] for element names and [1][Number of element] for burning speed values}{This function formats the burning speeds of elements into a string for display. Each element's name and its corresponding burning speed are included in the output string}{Answer [string] - a formatted string containing element names and their burning speeds}
+
+\vspace{1em}
+
+\namefunction{Elements\_burning\_time\_state\_display(Elements\_burning\_time)}{Elements\_burning\_time [array] - stores burning times of elements in format [elements (navigation part)][burning times] with navigation [0][Number of element] for element names and [1][Number of element] for burning time values}{This function formats the burning times of elements into a string for display. Each element's name and its corresponding burning time are included in the output string}{Answer [string] - a formatted string containing element names and their burning times}
+
+\vspace{1em}
+
+\namefunction{Simulation\_state\_display\_simpler(Mass\_fractions)}{Mass\_fractions [array] - stores mass fractions of elements in format [elements (navigation part)][mass fractions] with navigation [0][Number of element] for element names and [1][Number of element] for mass fraction values}{This function provides a simplified format for displaying mass fractions of elements. It creates a comma-separated string of mass fraction values without element names}{Answer [string] - a comma-separated string of mass fraction values}
+
+\vspace{1em}
+
+\namefunction{El\_pos\_state\_display(Electrons\_concentration, Positrons\_concentration)}{Electrons\_concentration [float] - concentration of electrons, Positrons\_concentration [float] - concentration of positrons}{This function formats the concentrations of electrons and positrons into a comma-separated string}{[string] - a formatted string containing electron and positron concentrations}
+
+\vspace{1em}
+
+\namefunction{Time\_display(Time, Time\_limit)}{Time [float] - current simulation time in years, Time\_limit [float] - total simulation time limit in years}{This function formats the current simulation time and calculates the percentage of the simulation completed. It returns a string with the time in years and the percentage completed}{[string] - a formatted string containing the current time in years and the percentage of simulation completed}
+
+\vspace{1em}
+
+\namefunction{Temperature\_display(Temperature)}{Temperature [float] - current temperature in Kelvin}{This function formats the temperature for display}{[string] - a formatted string containing the temperature in Kelvin}
+
+\vspace{1em}
+
+\namefunction{General\_condition\_display(Concentrations, Elements\_burning\_time, Electrons\_burning\_time, Positrons\_burning\_time)}{Concentrations [array] - stores concentrations of elements in format [elements (navigation part)][concentrations] with navigation [0][Number of element] for element names and [1][Number of element] for concentration values, Elements\_burning\_time [array] - stores mass fractions of elements in format [elements (navigation part)][burning\_times] with navigation [0][Number of element] for element names and [1][Number of element] for burning time values, Electrons\_burning\_time [float] - burning time for electrons, Positrons\_burning\_time [float] - burning time for positrons}
+{This function uses empericaly estimated boundaries of parameters of simulation to deretmine if it is stable or not. Output of this function is only emperical estimate to warn user about potential problems and shall not be taken as the ultimate verdict.}
+{[string] - A status message ("Stable", "Suspicious...", or "Critical!") based on the current state of the simulation.}
+
+\vspace{1em}
+
+\namefunction{Debug\_display(Unresonant\_reactions, Concentrations, Electrons\_concentration, Positrons\_concentration)}{Unresonant\_reactions [not used], Concentrations [array] - stores concentrations of elements, Electrons\_concentration [float] - concentration of electrons, Positrons\_concentration [float] - concentration of positrons}{This function is currently unused. It's designed to print concentrations of elements, electrons, and positrons for debugging purposes}{None (prints to console)}
+
+\section{Electron\_positron\_operations:}
+
+\vspace{1em}
+
+\namefunction{Electron\_positron\_unresonant\_matrix\_create(R)}{R [int] - number of unresonant reactions}{This function parses unresonant reaction equations from the "Simulation\_input.txt" file and creates matrices storing the effect on electron and positron numbers for each reaction}{Electron\_unresonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many one reaction produces or consumes) with navigation [Number of unresonant reaction], Positron\_unresonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many one reaction produces or consumes) with navigation [Number of unresonant reaction]}
+
+\vspace{1em}
+
+\namefunction{Electron\_positron\_resonant\_matrix\_create(R)}{R [int] - number of resonant reactions}{This function parses resonant reaction equations from the "Simulation\_input.txt" file and creates matrices storing the effect on electron and positron numbers for each reaction}{Electron\_resonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many one reaction produces or consumes) with navigation [Number of resonant reaction], Positron\_resonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many one reaction produces or consumes) with navigation [Number of resonant reaction}
+
+\vspace{1em}
+
+\namefunction{Electron\_positron\_decay\_matrix\_create(R)}{R [int] - number of decay reactions}{This function parses decay reaction equations from the "Simulation\_input.txt" file and creates matrices storing the effect on electron and positron numbers for each reaction}{Electron\_decay\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many one reaction produces or consumes) with navigation [Number of unresonant reaction], Positron\_unresonant\_reaction\_effect [array] - stores reaction`s impacts on concentrations of positrons (how many one reaction produces or consumes) with navigation [Number of unresonant reaction]}
+
+\vspace{1em}
+
+\namefunction{Electron\_positron\_processes\_matrix\_create(R)}{R [int] - number of processes}{This function parses process equations from the "Simulation\_input.txt" file and creates matrices storing the effect on electron and positron numbers for each process}{Electron\_process\_effect [array] - stores process` impacts on concentrations of electrons (how many one process produces or consumes) with navigation [Number of process], Positron\_process\_effect [array] - stores process` impacts on concentrations of positrons (how many one process produces or consumes) with navigation [Number of process]}
+
+\vspace{1em}
+
+\namefunction{Electron\_positron\_initial\_concentration\_count(Elements, Concentrations)}{Elements [array] - copy of "Elements\_data.txt", Concentrations [array] - stores concentrations of elements}{This function calculates the initial concentration of electrons and positrons based on the assumption of overall electrical neutrality of the star:
+
+If charge of all nucleis from 0 to k is positive (any real situation):
+
+\[n_{e-} = \sum_{i = 1}^{k} n_{i}\]
+
+If it is negative otherwise, then method will create correspondint initial concentration of positrons:
+
+\[n_{e+} = \sum_{i = 1}^{k} n_{i}\]
+
+}{Electrons\_concentration [float] - initial concentration of electrons, Positrons\_concentration [float] - initial concentration of positrons}
+
+\vspace{1em}
+
+\namefunction{Electron\_positron\_burning\_speed(Electron\_unresonant\_reaction\_effect, \begin{sloppypar}Positron\_unresonant\_reaction\_effect, Unresonant\_reactions, Electron\_resonant\_reaction\_effect, Positron\_resonant\_reaction\_effect, Resonant\_reactions, Electron\_decay\_reaction\_effect, Positron\_decay\_reaction\_effect, Decay\_reactions, Electron\_process\_effect, Positron\_process\_effect, Processes):\end{sloppypar}}{ Electron\_unresonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read unresonant reaction], Positron\_unresonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read unresonant reaction], Unresonant\_reactions [array] - unresonant reactions matrix, Electron\_resonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read resonant reaction], Positron\_resonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read resonant reaction], Resonant\_reactions [array] - resonant reactions matrix, Electron\_decay\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read decay reaction], Positron\_decay\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read decay reaction], Decay\_reactions [array] - decay reactions matrix, Electron\_process\_effect [array] - stores process` impacts on concentrations of electrons (how many process produces or consumes) in format [Process` impact] with navigation [Number of read process], Positron\_process\_effect [array] - stores process` impacts on concentrations of positrons (how many process produces or consumes) in format [Process` impact] with navigation [Number of read process], Processes [array] - processes matrix}
+{This function calculates the rate of change in electron and positron concentrations based on all types of reactions and processes:
+
+\[\dot{n_{e-}} = -a_{e-}\sum_{i = 1}^{k} R_i\],
+
+\[\dot{n_{e+}} = -a_{e+}\sum_{i = 1}^{k} R_i\],
+
+where for k reactions that include electrons or positrons where "a" is factor coresnonding to nuclei them (a is positive if particle is in right side of nuclear equation and vice versa).
+
+}{Electrons\_burning\_speed [float] - rate of change of concentration of electron, Positrons\_burning\_speed [float] - rate of change of concentration of positron}
+
+\vspace{1em}
+
+\namefunction{Read\_the\_reaction\_el\_pos(Reaction)}{Reaction [string] - a string representing a reaction equation}{This function parses a reaction equation to determine its effect on electron and positron numbers}{Electrons\_add [int] - the net change in electron for given reaction, Positrons\_add [int] - the net change in positron for given reaction}
+
+\vspace{1em}
+
+\namefunction{El\_pos\_burning\_time\_count(Electrons\_burning\_speed, \begin{sloppypar}Positrons\_burning\_speed, \end{sloppypar} Electrons\_concentration, Positrons\_concentration)}{Electrons\_burning\_speed [float], Positrons\_burning\_speed [float] - Rates of change in electron and positron concentrations, Electrons\_concentration [float], Positrons\_concentration [float] - Current concentrations of electrons and positrons}{This function calculates the burning time for electrons and positrons based on their current concentrations and burning speeds.
+
+If burning speed of electrons is negative:
+
+\[t_{e-} = \frac{n_{e-}}{-\dot{n_{e-}}}\]
+
+otherwise:
+
+\[t_{e-} = \infty\]
+
+Same for positrons:
+
+\[t_{e+} = \frac{n_{e+}}{-\dot{n_{e+}}}\]
+
+otherwise:
+
+\[t_{e+} = \infty\]
+
+}{Electrons\_burning\_time [float] - burning time for electrons, Positrons\_burning\_time [float] - burning time for positrons}
+
+\section{Element\_operations:}
+
+\vspace{1em}
+
+\namefunction{Elements\_list\_create()}{None (reads from "Elements\_data.txt")}{Creates an array containing data about elements in the format: [Element, nucleus mass, nucleus charge, nucleus spin]}{Elements [array] - Elements [array] - copy of "Elements\_data.txt"}
+
+\vspace{1em}
+
+\namefunction{Is\_element\_new(x, Elements)}{x [string] - element symbol, Elements [array] - here: elements, already read from "Elements\_data.txt"}{Low-level technical function used when creating the element matrix. Checks if an element is new (not already in the Elements array)}{[bool] - True if the element is new, False otherwise}
+
+\vspace{1em}
+
+\namefunction{Mass\_of\_element(x, Elements)}{x [string] - element symbol, Elements [array] - copy of "Elements\_data.txt"}{Technical function to find the nucleus mass of a given element in the Elements array}{[float] - mass of the element's nucleus}
+
+\vspace{1em}
+
+\namefunction{Charge\_of\_element(x, Elements)}{x [string] - element symbol, Elements [array] - copy of "Elements\_data.txt"}{Technical function to find the nucleus charge of a given element in the Elements array}{[int] - charge of the element's nucleus}
+
+\vspace{1em}
+
+\namefunction{Spin\_of\_element(x, Elements)}{x [string] - element symbol, Elements [array] - copy of "Elements\_data.txt"}{Technical function to find the nucleus spin of a given element in the Elements array}{[float] - spin of the element's nucleus}
+
+\vspace{1em}
+
+\namefunction{Concentration\_of\_element(x, Concentrations)}{x [string] - element symbol, Concentrations [array] - stores concentrations of elements in format [elements (navigation part)][concentrations] with navigation [1][Number of the element]}{Technical function to find the concentration of nuclei of a given element in the Concentrations array}{[float] - concentration of the element's nuclei}
+
+\vspace{1em}
+
+\namefunction{Mass\_fraction\_of\_element(x, Mass\_fractions)}{x [string] - element symbol, Mass\_fractions - [array] stores mass fractions of elements in format [elements (navigation part)][mass fractions] with navigation [1][Number of elements]}{Technical function to find the mass fraction of nuclei of a given element from the core substance in the Mass\_fractions array}{[float] - Mass fraction of the element's nuclei}
+
+\vspace{1em}
+
+\namefunction{Max\_concentration\_of\_element(x, Elements, ro, M\_nuc)}{x [string] - element symbol, Elements [array] - copy of "Elements\_data.txt", ro [float] - core density, M\_nuc [float] - atomic mass unit in grams}{Technical function to calculate the maximum possible concentration of elements. Used to determine the burning time of an element if its concentration is increasing}{Max\_concentration [float] - maximum possible concentration of the element}
+
+\vspace{1em}
+
+\namefunction{Compound\_core(x, y, Elements)}{x, y [string] - element symbols, Elements [array] - copy of "Elements\_data.txt"}{Technical function for resonant reactions, determining the conditional core that arose before the instantaneous alpha decay in some resonant reactions with He4 output:
+
+then \[^{A_{1}}_{Z_{1}}X + ^{A_{2}}_{Z_{2}}Y \rightarrow ^{A_{3}}_{Z_{3}}Z\]
+
+where:
+
+$A_{1} + A_{2} = A_{3}$
+
+and 
+
+$Z_{1} + Z_{2} = Z_{3}$.
+
+Altough, a compound core should be listed in ''Elements.txt'' for this function not to crash
+
+}{[string] - symbol of the compound core that would be created if protons and neutrons of cores x and y were fused}.
+
+\vspace{1em}
+
+\namefunction{Reduced\_mass(m1, m2)}{m1, m2 [float] - masses of two particles}{Technical function for resonant reactions, calculating the reduced mass of the reaction (not a process):
+
+\[m_{ik} = \frac{m_i m_k}{m_i + m_k}\]
+
+}{[float] - reduced mass of two particles}
+
+\vspace{1em}
+
+\namefunction{Average\_per\_particle\_weight\_count(El\_con, Pos\_con, Elements, Concentrations)}{El\_con [float] - electron concentration, Pos\_con [float] - positron concentration, Elements [array] - copy of "Elements\_data.txt", Concentrations [array] - stores concentrations of elements in format [elements (navigation part)][concentrations] with navigation [1][Number of the element]}{Function to calculate the average molecular weight (average mass of any particle):
+
+\[\langle m \rangle = \frac{\sum_{i = 1}^{k} n_i \cdot m_i}{\sum_{i = 1}^{k} n_i}\]
+
+}{Average\_per\_particle\_weight [float] - Average molecular weight}
+
+\vspace{1em}
+
+\namefunction{Read\_element(x, Elements)}{x [string] - element symbol, Elements [array] - copy of "Elements\_data.txt"}{Parsing function that combines the results of functions for finding the mass, charge, and spin of an element's nucleus for a given element}{x [string], Mass [float], Charge [int], Spin [float] - element symbol, mass, charge, and spin}
+
+\vspace{1em}
+
+\namefunction{Read\_the\_unresonant\_reaction(line, Reaction\_number, Elements, Unresonant\_reactions)}{line [string] - reaction`s equation from "Simulation\_input.txt", Reaction\_number [int] - index of the reaction, Elements [array] - copy of "Elements\_data.txt", Unresonant\_reactions [array] - matrix of unresonant reactions}{Parsing function designed to record part of the data about the reaction in the matrix of unresonant reactions}{Unresonant\_reactions [array] - updated matrix of unresonant reactions}
+
+\vspace{1em}
+
+\namefunction{Read\_the\_resonant\_reaction(line, Reaction\_number, Elements, Resonant\_reactions)}{line [string] - reaction`s equation from "Simulation\_input.txt", Reaction\_number [int] - index of the reaction, Elements [array] - copy of "Elements\_data.txt", Resonant\_reactions [array] - matrix of resonant reactions}{Parsing function designed to record part of the data about the reaction in the matrix of resonant reactions}{Resonant\_reactions [array] - updated matrix of resonant reactions}
+
+\vspace{1em}
+
+\namefunction{Read\_the\_decay\_reaction(line, Reaction\_number, Elements, Decay\_reactions)}{line [string] - reaction`s` equation from "Simulation\_input.txt", Reaction\_number [int] - index of the reaction, Elements [array] - copy of "Elements\_data.txt", Decay\_reactions [array] - matrix of decay reactions}{Parsing function designed to record part of the data about the reaction in the matrix of decay reactions}{Decay\_reactions [array] - updated matrix of decay reactions}
+
+\vspace{1em}
+
+\namefunction{Read\_the\_process(line, Reaction\_number, Elements, Processes)}{line [string] - process` equation from "Simulation\_input.txt", Reaction\_number [int] - index of the process, Elements [array] - copy of "Elements\_data.txt", Processes [array] - matrix of processes}{Parsing function designed to record part of the data about the process in the matrix of processes}{Processes [array] - updated matrix of processes}
+
+\section{Neutrino\_spectrum:}
+
+\vspace{1em}
+
+\namefunction{Is\_neutrino(Components)}{Components [array] - list of components of reaction`s eqation.}{Parsing function designed to identify if reaction emmits a neutrino as a result}{[bool] - parament that shows if reaction emmits a neutrino (True) or not (False)}
+
+\vspace{1em}
+
+\namefunction{Neutrino\_flux(Distance, R\_core, R)}{Distance [float] - distance to the core of a star from which neutrino flux must be predicted, R\_core [float] - radium of the core, R [float] - ammount of recation for which neutrino flux is being calculated per $cm^-3$ per $s^-1$}{Calculates neutrino flux for a given reaction based on its rate:
+
+\[\Phi_\nu = \frac{V \cdot R}{S}\]
+
+where $V$ - is a total volume of the core, R - rate of the reaction that emmits neutrino and $S$ - total surface of the star.
+
+(NOTE: Uses simpilification assuming that star is a material point, works well only for observation point with distance to the star way greater then the radium of the star)
+
+}{[int] -ammount of neutrino per second with set energy and intensity of their emission}
+
+\vspace{1em}
+
+\namefunction{Neutrino\_energy(Energy, E\_max)}{Energy [float] - we calculate flux of neutrinos that have this energy in MeV, E\_max [float] - max possible neutrino energy for given reaction (only for reactions with non-constant neutrino energy)}{Calculates probability density for neutrino with set energy using Ferma`s formula for beta-decay neutrino energy density probability [2]:
+
+\[P(E) = X^{2} \cdot (1 - X)^{2} \cdot \sqrt{1 - X^{2}}\]
+
+with
+
+\[X = \frac{E}{E_{max}}\]
+
+where $E_{max}$ is the energy output of the reaction neutrino was produced by.
+
+}{[float] - probability density for neutrino with set energy}
+
+\vspace{1em}
+
+\namefunction{Neutrino\_unresonant\_reactions\_matrix\_create()}{None (reads from "Elements\_data.txt")}{Uses "Simulation\_input" to create an array with information about neutrino emission for "Unresonant\_reactions":
+
+\textbf{Neutrino\_unresonant\_reactions\_matrix for reaction with number $i$:}
+\begin{itemize}
+    \item Neutrino\_unresonant\_reactions\_matrix[0][$i$] - reaction type (0 - neutrino-free reactions, 1 - continuum (neutrinos with different energies), 2 - neutrinos with fixed energy);
+    \item Neutrino\_unresonant\_reactions\_matrix[1][$i$] - maximum neutrino energy (for type 1 reactions);
+    \item Neutrino\_unresonant\_reactions\_matrix[2][$i$] - neutrino channel energy for first channel (for type 2 reactions);
+    \item Neutrino\_unresonant\_reactions\_matrix[3][$i$] - probability of neutrino channel for first channel (for type 2 reactions);
+    \item Neutrino\_unresonant\_reactions\_matrix[4][$i$] - neutrino channel energy for second channel (for type 2 reactions);
+    \item Neutrino\_unresonant\_reactions\_matrix[5][$i$] - probability of neutrino channel for second channel (for type 2 reactions).
+\end{itemize}
+
+
+}{Neutrino\_unresonant\_reactions\_matrix [array] - unresonant reactions neutrino matrix}
+
+\vspace{1em}
+
+\namefunction{Neutrino\_resonant\_reactions\_matrix\_create()}{None (reads from "Elements\_data.txt")}{Uses "Simulation\_input" to create an array with information about neutrino emission for "Resonant\_reactions":
+
+\textbf{Neutrino\_resonant\_reactions\_matrix for reaction with number $i$:}
+\begin{itemize}
+    \item Neutrino\_resonant\_reactions\_matrix[0][$i$] - reaction type (0 - neutrino-free reactions, 1 - continuum (neutrinos with different energies), 2 - neutrinos with fixed energy);
+    \item Neutrino\_resonant\_reactions\_matrix[1][$i$] - maximum neutrino energy (for type 1 reactions);
+    \item Neutrino\_resonant\_reactions\_matrix[2][$i$] - neutrino channel energy for first channel (for type 2 reactions);
+    \item Neutrino\_resonant\_reactions\_matrix[3][$i$] - probability of neutrino channel for first channel (for type 2 reactions);
+    \item Neutrino\_resonant\_reactions\_matrix[4][$i$] - neutrino channel energy for second channel (for type 2 reactions);
+    \item Neutrino\_resonant\_reactions\_matrix[5][$i$] - probability of neutrino channel for second channel (for type 2 reactions).
+\end{itemize}
+
+}{Neutrino\_resonant\_reactions\_matrix [array] - resonant reactions neutrino matrix}
+
+\vspace{1em}
+
+\namefunction{Neutrino\_decay\_reactions\_matrix\_create()}{None (reads from "Elements\_data.txt")}{Uses "Simulation\_input" to create an array with information about neutrino emission for "Decay\_reactions":
+
+\textbf{Neutrino\_decay\_reactions\_matrix for reaction with number $i$:}
+\begin{itemize}
+    \item Neutrino\_decay\_reactions\_matrix[0][$i$] - reaction type (0 - neutrino-free reactions, 1 - continuum (neutrinos with different energies), 2 - neutrinos with fixed energy);
+    \item Neutrino\_decay\_reactions\_matrix[1][$i$] - maximum neutrino energy (for type 1 reactions);
+    \item Neutrino\_decay\_reactions\_matrix[2][$i$] - neutrino channel energy for first channel (for type 2 reactions);
+    \item Neutrino\_decay\_reactions\_matrix[3][$i$] - probability of neutrino channel for first channel (for type 2 reactions);
+    \item Neutrino\_decay\_reactions\_matrix[4][$i$] - neutrino channel energy for second channel (for type 2 reactions);
+    \item Neutrino\_decay\_reactions\_matrix[5][$i$] - probability of neutrino channel for second channel (for type 2 reactions).
+\end{itemize}
+
+}{Neutrino\_decay\_reactions\_matrix [array] - decay reactions neutrino matrix}
+
+\vspace{1em}
+
+\namefunction{Neutrino\_processes\_matrix\_create()}{None (reads from "Elements\_data.txt")}{Uses "Simulation\_input" to create an array with information about neutrino emission for "Decay\_reactions":
+
+\textbf{Neutrino\_processes\_matrix for reaction with number $i$:}
+\begin{itemize}
+    \item Neutrino\_processes\_matrix[0][$i$] - process type (0 - neutrino-free processes, 1 - continuum (neutrinos with different energies), 2 - neutrinos with fixed energy);
+    \item Neutrino\_processes\_matrix[1][$i$] - maximum neutrino energy (for type 1 processes);
+    \item Neutrino\_processes\_matrix[2][$i$] - neutrino channel energy for first channel (for type 2 processes);
+    \item Neutrino\_processes\_matrix[3][$i$] - probability of neutrino channel for first channel (for type 2 processes);
+    \item Neutrino\_processes\_matrix[4][$i$] - neutrino channel energy for second channel (for type 2 processes);
+    \item Neutrino\_processes\_matrix[5][$i$] - probability of neutrino channel for second channel (for type 2 processes).
+\end{itemize}
+
+}{Neutrino\_processes\_matrix [array] - decay reactions neutrino matrix}
+
+\vspace{1em}
+
+\namefunction{Neutrino\_spectrum\_create(Neutrino\_unresonant\_reactions\_matrix, Unresonant\_reactions, Neutrino\_resonant\_reactions\_matrix, Resonant\_reactions, Neutrino\_decay\_reactions\_matrix, Decay\_reactions, Neutrino\_processes\_matrix, Processes, R\_core, Distance\_neutrino\_spectrum)}{Neutrino\_unresonant\_reactions\_matrix [array] - unresonant reactions neutrino matrix, Unresonant\_reactions [array] - unresonant reactions matrix, Neutrino\_resonant\_reactions\_matrix [array] - resonant reactions neutrino matrix, Resonant\_reactions [array] - resonant reactions matrix, Neutrino\_decay\_reactions\_matrix [array] - decay reactions neutrino matrix, Decay\_reactions [array] - decay reactions matrix, Neutrino\_processes\_matrix [array] - processes neutrino matrix, Processes [array] - processes matrix, R\_core [float] - core radium in santimeters, Distance\_neutrino\_spectrum [float] - distance to the core of a star from which neutrino flux must be predicted}{For all types of reactions: unresonant reactions, resonant reactions, decay reactions and processes method checks type of neutrino emission in coresponding neutrino reactions and acts corespondingly. If reaction is neutrinoless, then it does nothing. If reaction`s neutrino emission is continuum, then it takes a set ammount of energy values in energy range from 0 to maximum possible neutrino energy, uses Neutrino\_energy(Energy, E\_max) method to get probability density for each energy values, then applies Neutrino\_flux(Distance, R\_core, R) method to each of them to get neutrino flux for each energy values based on rate of coresponding reaction and adds (neutrino flux / neutrino energy) array to the graph. If reaction emmits neutinos with set energy or energies, then it does all same actions but uses probabilty of neutrino getting a specific energy instead of Neutrino\_energy(Energy, E\_max) method}{None (draws graph using mathplotlib.pyplot showing neutrino spectrum)}
+
+\section{Processes:}
+
+\vspace{1em}
+
+\namefunction{Processes\_matrix\_create(Elements)}{Elements [array] - copy of "Elements\_data.txt"}{Uses "Simulation\_input" and "Elements\_data.txt" to create a partially filled template for "Processes":
+
+\textbf{Processes for reaction with number $i$:}
+\begin{itemize}
+    \item Processes[0][$i$] - first initial element;
+    \item Processes[1][$i$] - second initial element;
+    \item Processes[2][$i$] - third initial element;
+    \item Processes[3][$i$] - first resulting element;
+    \item Processes[4][$i$] - second resulting element;
+    \item Processes[5][$i$] - third resulting element;
+    \item Processes[6][$i$] - energy effect of the process;
+    \item Processes[7][$i$] - value of <$\sigma \cdot v$>;
+    \item Processes[8][$i$] - number of processes per $cm^{-3}$ per $s^{-1}$.
+\end{itemize}
+
+}{Processes [array] - processes matrix}
+
+\vspace{1em}
+
+\namefunction{Processes\_formulas\_container(Processes, T, N\_a, t1)}{Processes [array] - processes matrix, T [float] - core temperature in Kelvin, N\_a - Avogadro`s number, t1 - number of process in Processes}{Aplies a complex numerical formula for process` cross-section from a container consisting of units with structure: "[Element 1, Element 2, Element 3, Critical temperature (for changing formula from cold to hot), cold formula, hot formula]". Fromulas come from an article [1]}{Decay\_recationss [array] - decay reactions matrix}
+
+\vspace{1em}
+
+\namefunction{Processes\_matrix\_update(Processes, T, N\_a)}{Processes [array] - processes matrix, T [float] - core temperature in Kelvin, N\_a - Avogadro`s number}{Applies Processes\_formulas\_container(Processes, T, N\_a, t1) method for each process in Processes}{Processes [array] - processes matrix}
+
+
+\vspace{1em}
+
+\namefunction{Processes\_count(Processes, Concentrations)}{Processes [array] - processes matrix, Concentrations - [array] stores concentrations of elements in format [elements (navigation part)][concentrations] with navigation [1][Number of the element]}{Calculates rates of processes based on Processes using formula:
+
+\[R = n_1 \cdot n_2 \cdot n_3 \cdot \langle \sigma \cdot V \rangle_{gs}\]}{Processes [array] - processes matrix}
+
+\section{Resonant\_reactions:}
+
+\vspace{1em}
+
+\namefunction{Integration\_trapz(x, y)}{x, y [array] (of equal size) - sets of x and y coordinates of data points of the graph that is being integrated}{This utility function performs numerical integration using the trapezoidal rule. It calculates the area under the curve defined by the x and y values, function iterates through the provided lists, computing the integral by summing up the areas of trapezoids formed by adjacent data points. If there are $k$ data points and step between data points is $h$ then:
+
+\[\int_{x_1}^{x_2} f(x) dx \approx h \cdot \left( \frac{f(x_1) + f(x_2)}{2} + \sum_{i = 1}^{k - 1} f(x_1 + ih)\right)\]
+
+}{Integral - total square under the data curve}
+
+\vspace{1em}
+
+\namefunction{Resonant\_reactions\_matrix\_create(Elements, h\_, M\_nuc, e, k, T)}{Elements [array] - copy of "Elements\_data.txt", h\_ [float] - reduced Planck`s constant in SI, M\_nuc [float] - atomic unit of mass in grams, e [float] - Euler`s number, k [float] - Boltzman`s constant in SI, T [float] - core temperature in Kelvin}{Uses "Simulation\_input" and "Elements\_data.txt" to create a partially filled template for "Resonant\_reactions":
+
+\textbf{Resonant\_reactions for reaction with number $i$:}
+\begin{itemize}
+    \item Resonant\_reactions[0][$i$] - first initial element;
+    \item Resonant\_reactions[1][$i$] - second initial element;
+    \item Resonant\_reactions[2][$i$] - mass of first initial element;
+    \item Resonant\_reactions[3][$i$] - mass of second initial element;
+    \item Resonant\_reactions[4][$i$] - charge of first initial element;
+    \item Resonant\_reactions[5][$i$] - charge of second initial element;
+    \item Resonant\_reactions[6][$i$] - spin of first initial element;
+    \item Resonant\_reactions[7][$i$] - spin of second initial element;
+    \item Resonant\_reactions[8][$i$] - reduced reaction mass;
+    \item Resonant\_reactions[9][$i$] - first resulting element;
+    \item Resonant\_reactions[10][$i$] - mass of first resulting element;
+    \item Resonant\_reactions[11][$i$] - charge of first resulting element;
+    \item Resonant\_reactions[12][$i$] - spin of first resulting element;
+    \item Resonant\_reactions[13][$i$] - second resulting element;
+    \item Resonant\_reactions[14][$i$] - mass of second resulting element;
+    \item Resonant\_reactions[15][$i$] - charge of second resulting element;
+    \item Resonant\_reactions[16][$i$] - spin of second resulting element;
+    \item Resonant\_reactions[17][$i$] - partial width of the input channel;
+    \item Resonant\_reactions[18][$i$] - partial width of the output channel;
+    \item Resonant\_reactions[19][$i$] - full resonance width;
+    \item Resonant\_reactions[20][$i$] - resonance energy;
+    \item Resonant\_reactions[21][$i$] - energetic effect of the reaction;
+    \item Resonant\_reactions[22][$i$] - temperature for which the cross-section of the formation of a composite core is calculated;
+    \item Resonant\_reactions[23][$i$] - dependence of the cross-section on the energy of the nuclei (based on Breit-Wigner's formula over an energy range of 50 resonance full widths from resonance energy in both directions):
+    \begin{itemize}
+    \item Resonant\_reactions[23][$i$][0] - values of energy in SAJouls that lay within energy range of 50 resonance full widths from resonance energy in both directions (otherwise are 0);
+    \item Resonant\_reactions[23][$i$][1] - values of cross-section that are corresponding to energy values from Resonant\_reactions[23][$i$][0] \\ (Resonant\_reactions[23][$i$][0][$j$] and Resonant\_reactions[23][$i$][1][$j$] is a corresponding pair);
+    \end{itemize}
+    \item Resonant\_reactions[24][$i$] - <$\sigma \cdot v$> of the formation of a composite core;
+    \item Resonant\_reactions[25][$i$] - number of reactions per $cm^{-3}$ per $s^{-1}$.
+\end{itemize}
+
+
+}{Decay\_recations [array] - decay reactions matrix}
+
+\vspace{1em}
+
+\namefunction{Resonant\_reactions\_matrix\_update(Resonant\_reactions, Concentrations, T, Pi, e, k, M\_nuc)}{Resonant\_reactions [array] - resonant reactions matrix, T [float] - core temperature in Kelvin, Pi [float] - number $\pi$, e [float] - Euler`s number, k [float] - Boltzman`s constant, M\_nuc [float] - atomic unit of mass in grams}{For each resonant reaction in Resonant\_reactions in calculates:
+
+\[\langle \sigma \cdot v \rangle_{gs} = \int_{0}^{\alpha \cdot c} \left( \int_{E_{res} - n \cdot \Gamma}^{E_{res} + n \cdot \Gamma} \sigma(E) \cdot P(E; v_{rel}) \, dE \right) v_{rel} \cdot P(v_{rel}) \, dv_{rel}\]
+
+Here $\alpha$ and $n$ are technical parameters. $\alpha$ is needed to avoid effects of general relativity and should be kept below $0.1$. $n$ determines the width of energy range that is used to calculate cross-sections of resonant reactions (range of n resonance full widths from resonance energy in both directions).
+
+Also, both integrals are normalized using Integration\_trapz(x, y) method. But that is only a  technical correction with change due to that usually being less then one millioth and quickly decreasing with the increase of Point\_of\_calculation parameter.
+
+$\sigma(E)$ comes from Breit-Wigner`s formula:
+
+\[\sigma(E) = \frac{\pi \hbar^2}{2 \mu E} \cdot \frac{(2J + 1)}{(2J_{i} + 1)(2J_{j} + 1)} \cdot \frac{\Gamma_a \Gamma_b}{(E - E_R)^2 + \left( \frac{\Gamma}{2} \right)^2}\]
+
+$P(E; v_{rel})$ comes from Maxwell`s distribution of probability for a pair of particles to have a certain value of total energy in non-inertial frame of reference based on their relative speed:
+
+\[P(E; v_{rel}) = 
+\left\{
+\begin{array}{ll}
+\sqrt{E - E_{rel}} \cdot \exp\left(-\frac{E - E_{rel}}{k T}\right), & if \ E \geq E_{rel}, \\
+0, & if \ E < E_{rel}.
+\end{array}
+\right.\]
+
+And $P(v_{rel})$ is Maxwell`s probability distribution for relative speed of a pair of particles (not necessarily similar):
+
+\[P(v_{rel}) = 4 \pi \left( \frac{m_{ik}}{2 \pi k T} \right)^{3/2} v_{rel}^2 \exp \left( -\frac{m_{ik} v_{rel}^2}{2 k T} \right)\]
+
+where $m_{ik}$ is reduced mass of a pair of particles:
+
+\[m_{ik} = \frac{m_i m_k}{m_i + m_k}\]
+
+}{Resonant\_reactions [array] - resonant reactions matrix}
+
+\vspace{1em}
+
+\namefunction{Resonant\_reactions\_reactions\_count(Resonant\_reactions, Pi, R, T, Elements, Concentrations)}{Resonant\_reactions [array] - resonant reactions matrix, Pi [float] - number $\pi$, R [float] - universal gas constant in SI, T [float] - core temperature in Kelvin, Concentrations - [array] stores concentrations of elements in format [elements (navigation part)][concentrations] with navigation [1][Number of the element]}{Calculates rates of resonant reactions based on Processes using formula:
+
+\[R = n_1 \cdot n_2 \cdot \langle \sigma \cdot v \rangle_{gs}\]}{Processes [array] - processes matrix}
+
+\vspace{1em}
+
+\namefunction{Resonant\_reactions\_matrix\_print(Resonant\_reactions)}{Resonant\_reactions [array] - resonant reactions matrix}{Prints resonant reactions matrix}{None (prints into console)}
+
+\section{Temperature\_change:}
+
+\vspace{1em}
+
+\namefunction{Temperature\_change\_speed\_count(Unresonant\_reactions, Resonant\_reactions, Decay\_reactions, Processes, T\_surface, R\_star, R\_core, Concentrations)}{dt [float] - time step of the modeling, Unresonant\_reactions [array] - unresonant reactions matrix, Resonant\_reactions [array] - resonant reactions matrix, Decay\_reactions [array] - decay reactions matrix, Processes [array] - processes matrix, St\_Bol [float] - Stefan-Boltzman`s constant in SI, Pi [float] - number $\pi$, T\_surface - surface star temperature in Kelvins, R\_star, i [int] - degrees of freedom, R\_core [float] - universal gas constant in SI, N\_a [float] - Avogadro`s number in SI, Concentrations}{This method calculates total generated energy from all reactions:
+
+\[{E_{gain}} = \sum_{i = 1}^{k} ({E_{effect}} \cdot {R_i}) \times \frac{4}{3} \pi{R_{core}}^{3}\],
+
+ then calculates total energy loss using Stefan-Boltzman`s constant and star`s surface:
+
+\[E_{loss} = \sigma \cdot 4 \cdot \pi \cdot R_{star}^2 \cdot T^4\]
+
+Total energy change:
+
+\[E_{change} = E_{gain} - E_{loss}\]
+
+After that it uses Mayer`s ratio with constant volume of unit of substance of the core to get heat capacity for perfect gas model which is used for plasma:
+
+$C_{V} = \frac{R}{\gamma - 1}$, where $\gamma = \frac{5}{3}$ instead of $\frac{4}{3}$ because plasma is not a perfect one-atom gas.
+
+Ammount of particles in moles in a unit of volume for all isotopes:
+
+\[\nu = \sum_{i = 1}^{k} \frac{n_k}{N_a}\]
+
+After that it calculates temperature change using star`s total volume:
+
+\[T_{change} = \frac{E_{change}}{C_{V} \cdot \nu \cdot \frac{4}{3} \pi{R_{core}}^{3}}\]
+
+}{Temperature\_change [float] - change of core temperature in Kelvin}
+
+\namefunction{Temperature\_change\_time\_count(T, Temperature\_change\_speed)}{T [float] - core temperature in Kelvins, Temperature\_change\_speed - $\frac{dT}{dt} = \dot{T}$}{
+
+Calculates time it would take for core temperature to drop to 0 Kelvin with current change rate if it`s charge speed is negative:
+
+\[t_{T} = \frac{T}{-\dot{T}}\]
+
+}{Temperature\_change\_time - time it would take for core temperature to drop to 0 Kelvin with current change rate if it`s charge speed is negative.}
+
+\section{Unresonant\_reactions:}
+
+\vspace{1em}
+
+\namefunction{Unresonant\_reactions\_matrix\_create(Elements)}{Elements [array] - copy of "Elements\_data.txt"}{Uses "Simulation	\_input" and "Elements\_data.txt" to create a partially filled template for "Unresonant\_reactions":
+
+\textbf{Unresonant\_reactions for reaction with number $i$:}
+\begin{itemize}
+    \item Unresonant\_reactions[0][$i$] - first initial element;
+    \item Unresonant\_reactions[1][$i$] - second initial element;
+    \item Unresonant\_reactions[2][$i$] - mass of first initial element;
+    \item Unresonant\_reactions[3][$i$] - mass of second initial element;
+    \item Unresonant\_reactions[4][$i$] - charge of first initial element;
+    \item Unresonant\_reactions[5][$i$] - charge of second initial element;
+    \item Unresonant\_reactions[6][$i$] - reduced reaction mass;
+    \item Unresonant\_reactions[7][$i$] - $S_0$ (scaling factor for cross-section);
+    \item Unresonant\_reactions[8][$i$] - Kronecker symbol (indicates identity or distinct nature of reaction channels);
+    \item Unresonant\_reactions[9][$i$] - $\tau$;
+    \item Unresonant\_reactions[10][$i$] - first resulting element;
+    \item Unresonant\_reactions[11][$i$] - mass of first resulting element;
+    \item Unresonant\_reactions[12][$i$] - second resulting element;
+    \item Unresonant\_reactions[13][$i$] - mass of second resulting element;
+    \item Unresonant\_reactions[14][$i$] - third resulting element;
+    \item Unresonant\_reactions[15][$i$] - mass of third resulting element;
+    \item Unresonant\_reactions[16][$i$] - number of reactions per unit of time;
+    \item Unresonant\_reactions[17][$i$] - dependence on electrons (positrons);
+    \item Unresonant\_reactions[18][$i$] - first electronic (positronic) proportionality coefficient;
+    \item Unresonant\_reactions[19][$i$] - second electronic (positronic) proportionality coefficient;
+    \item Unresonant\_reactions[20][$i$] - number of the determining reaction (if any);
+    \item Unresonant\_reactions[21][$i$] - energy effect of the reaction.
+\end{itemize}
+
+
+}{Unresonant\_recationss [array] - unresonant reactions matrix}
+
+\vspace{1em}
+
+\namefunction{Unresonant\_reactions\_matrix\_update(Unresonant\_reactions, T)}{Unresonant\_recationss [array] - decay reactions matrix; T [float] - currect core temperature in Kelvin}{This method updates tau to a new core temperature value}{Unresonant\_recationss [array] - unresonant reactions matrix}
+
+\vspace{1em}
+
+\namefunction{Unresonant\_reactions\_count(Unresonant\_reactions, Concentrations)}{Unresonant\_reactions [array] - unresonant reactions matrix; Concentrations - [array] stores concentrations of elements in format [elements (navigation part)][concentrations] with navigation [1][Number of the element]}{Uses classical unresonant reactions rate formula [3] to calculate rates for them:
+
+\[R_{ik} = 7.20 \times 10^{-19} \cdot \frac{n_i n_k}{1 + \delta_{ik}} \cdot \frac{S_0}{Z_i Z_k m_{ik}} \cdot \tau^2 e^{-\tau}\], 
+
+where:
+
+\[\delta_{ik} = 1\] if i = k, otherwise \[\delta_{ik} = 0\]
+
+and
+
+\[\tau = 42.49 \left(\frac{Z_i^2 Z_k^2 m_{ik}}{T/10^6}\right)^{1/3}\]
+
+with
+
+\[m_{ik} = \frac{m_i m_k}{m_i + m_k}\]}{Unresonant\_recationss [array] - unresonant reactions matrix}
+
+\section{World\_constants:}
+
+\vspace{1em}
+
+Constaints a class "Worldconstants" with names and values of all world constants. Is imported in other modules where its needded as "Wc".
+
+\section{Star\_soft\_main:}
+
+\vspace{1em}
+
+1. Library imports (lines 1-14):
+   This section imports the necessary libraries and modules, including datetime for time operations, matplotlib for plotting graphs, numpy for numerical computations, and all other modules for modeling operations.
+
+2. Simulation parameter initialization (lines 17-54):
+   This block reads input parameters from the "Simulation\_input.txt" file and initializes them. Important parameters include:
+   - $R_{core}$: stellar core radius
+   - $ro$: sore density
+   - $T$: temperature
+   - $T_{surface}$: surface temperature
+   - $R_{star}$: stellar radius
+   - Mass fractions of elements
+   - Time limits and step
+   - Solution method (Curant)
+
+3. File opening and creation of main data structures (lines 56-136):
+   This section opens necessary input/output files, creates element lists, initializes physical constants (e.g., $\pi$, $e$, nucleon mass $M_{nuc}$, electron mass $M_e$) and creates matrices for various types of reactions (non-resonant, resonant, decay).
+
+4. Initialization of electron and positron concentrations (lines 138-150):
+   Initial concentrations of electrons and positrons are calculated based on the condition of stellar electroneutrality.
+
+5. Main simulation loop (lines 170-287):
+   This is the core of the program, where step-by-step modeling of stellar core evolution occurs. At each step:
+   - Element concentrations are updated
+   - Reaction matrices are updated
+   - A differentiation step is performed (Curant or Runge-Kutta 4)
+   - Element mass fractions, electron and positron concentrations, and temperature are updated
+   - Simulation state information is periodically output
+
+6. Results visualization (lines 290-375):
+   After the simulation is complete, data is read from the output file and a graph of various stellar parameters' evolution (element mass fractions, electron and positron concentrations, temperature) is plotted as a function of time.
+
+\section{Simulation\_input:}
+
+\vspace{1em}
+
+NOTE: All <variables> in this section are presented in format: Elements name [string]: Characteristic [float], ...
+
+\vspace{1em}
+
+- General star parameters:
+
+For graphs: core radius, core density, core temperature, star radius, initial elements concentrations, modleing time limit, time step limit (cirrently is hard-written into code in Curant(<...>) method with relative time step limit), differential equations solving method: method, its mode and coresponding constants (currently only Curant and Force), core temperature change permission, output frequency, output format - must be provided suitable values according to description in the file.
+
+\vspace{1em}
+
+- Reactions settings (RECOMMENDED NOT TO CHANGE):
+
+Reactions constants coresponding to there model (except for "Processes" - complicated formulas for them are hard-written into Processes\_formulas\_container(<...>) method).
+
+\vspace{1em}
+
+- Reactions:
+
+Reactions equations with some settings:
+
+Unesonant: Components\_(Defying reaction number (result is multiplied by that defying reaction rate))\_(Energy output)\_(Neutrino emission settings)
+
+Resonant, Decay and Processes: Components\_(Energy output)\_(Neutrino emission settings)
+
+\section{World\_constants:}
+
+\vspace{1em}
+
+Contains universal constants in SA units measurement system in format:
+
+[Name] = [Value] [Measure units]
+
+\vspace{1em}
+
+List of constants:
+
+\begin{itemize}
+
+    \item Pi = 3.14159262 - number Pi;\\
+    
+    \item e = 2.7182818284590 - Euler`s number;\\
+    
+    \item M\_nuc = 1.66e-24 $g$ - atomis mass unit;\\
+    
+    \item M\_e = 9.1093837015e-28 $g$ - mass of a stationary electron;\\
+    
+    \item i = 6 - degrees of freedom of particles in stellar plasma;\\
+    
+    \item St\_Bol = 5.67e-8 * 1e+22 * 3.154e+7 * 1e-4 $SAWatt / sm^{2} * K^{4}$ - Stephan-Boltzman`s constant;\\
+    
+    \item R = 8.3 * 1e+22 SaJoul / K * Mole - universal gas constant;\\
+    
+    \item N\_a = 6.022e+23 1 / Mole - Avogadro`s number;\\
+    
+    \item k = 1.380649e-23 * 1e+22 SAJoul / K - Boltzman`s constant;\\
+    
+    \item h = 6.63e-34 * 1e+22 / 3.154e+7 SAJoul * y - Plank`s constant;\\
+    
+    \item h\_ = 1.0545726e-34 * 1e+22 / 3.154e+7 SAJoul * y - reduced Plank`s constant;\\
+    
+    \item p0 = 1e+5 * 1e+16 SAPascal - normal pressure;\\
+    
+    \item T0 = 273.15 K - normal temperature.\\
+    
+\end{itemize}
+
+\section{Elements\_data:}
+
+\vspace{1em}
+
+Contains information about nucleis in format:
+
+[Name] [Mass in atomic mass units] [Charge in elemental charges] [Spin]
+
+(Note: Shall not be modified, to set up initial concentrations of elements, use ''Simulation\_input.txt'').
+
+\section{Simulation\_output:}
+
+\vspace{1em}
+
+Single output structure:
+
+Passed time of modeling, percentage of time passed (from time limit), <Concentrations>, Electrons concentration, Positrons concentration, Temperature K
+Time step.
+
+\section{Logs:}
+
+\vspace{1em}
+
+NOTE: All <variables> in this section are presented in format: Elements name [string]: Characteristic [float], ...
+
+\vspace{1em}
+
+Initial output if no major bugs occure:
+
+\begin{small}
+\begin{verbatim}
+[Output time]>>>Creating unresonant reaction matrix...
+[Output time]>>>Succesfully created unresonant reaction matrix with [int] reactions.
+[Output time]>>>Creating resonant reactions matrix...
+[Output time]>>>Succesfully created resonant reaction matrix with [int] reactions.
+[Output time]>>>Creating decay reactions matrix...
+[Output time]>>>Succesfully created decay reaction matrix with [int] reactions.
+[Output time]>>>Creating processes matrix...
+[Output time]>>>Succesfully created processes matrix with [int] reactions.
+[Output time]>>>Starting simulation...
+\end{verbatim}
+\end{small}
+
+Single output structure:
+
+\begin{tiny}
+\begin{verbatim}
+[Output time]>>>General info: Mass fractions: Passed time, percentage of time (from time limit), <Concentrations>, El. conc., Posit. conc., Temp.
+[Output time]>>>Iteration: [int], Time passed: [float], [float]\%, Time step: [float]y
+[Output time]>>>Slowest element: [float] (Burning time), [string] (name of the element)
+[Output time]>>>Reactions speed: Unres.: [<Reactions rates>] Res.: [<Reactions rates>] Decay: [<Reactions rates>] Processes: [<Reactions rates>]
+[Output time]$>>>$Concentrations: <Concentrations>
+[Output time]$>>>$Elements\_burning\_speed: <Elements burning speed>
+[Output time]$>>>$Elements\_burning\_time: <Elements burning time>
+[Output time]$>>>$Simulation condition: [string]
+\end{verbatim}
+\end{tiny}
+
+\section{Used materials:}
+
+[1] C. Angulo et al., Nucl. Phys. A, 656, 3, 1999
+[2] Konopinski, E. J. (1943). Beta-Decay. Reviews of Modern Physics, 15(4), 209–245
+[3] Star physics, Ivanov, 2018
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
