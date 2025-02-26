@@ -5,9 +5,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T2A]{fontenc}
 
-\title{"Star Soft" Documentation}
+\title{"Plasmium 5.0" Documentation}
 \author{Ponomarev Daniil}
-\date{August 2024}
+\date{February 2025}
 
 \newcommand{\namefunction}[4]{
   \begin{itemize}
@@ -16,9 +16,9 @@
   
   \textbf{Input variables}: #2.
   
-  \textbf{Description}: #3.
-  
   \textbf{Output variables}: #4.
+  
+  \textbf{Description}: #3.
 }
 
 \begin{document}
@@ -29,73 +29,79 @@
 
 \section{Introduction:}
 
-"Star Soft" is a python modeling software that allows you to set up and run simulations of stellar cores, including evolution of mass fractions of elements, electron and positron concentrations, temperature of the core and outside neutrino flux.
+Plasmium is a text-based Python modeling software that allows users to set up and run simulations of stellar cores. It models the evolution of elemental mass fractions, electron and positron concentrations, core temperature, and neutrino flux, but does not simulate plasma dynamics.
+
+Designed as an open-source educational tool, Plasmium is freely available for non-commercial use without restrictions. It is intended for students and enthusiasts rather than for high-level astrophysical research.
+
+If you are a student or an amateur researcher, Plasmium provides all the essential tools you need. However, if you are a professional astrophysicist seeking advanced modeling capabilities, I recommend using MESA.
 
 \section{Measuresment system:}
 
-Most of the modeling uses measurement system called "SA - Star Astro" with core units being: gramm, year, santimeter, mole, Kelvin, elemental charge, Gauss.
+The entirety of the software uses a custom measurement system called SA which stands for an old placeholder name of the tool ''Star Astro'' with core units being: gramm, year, santimeter, mole, Kelvin, elemental charge, Gauss.
 
-Only exclusions are "Temperature\_change.py" where Si is used and method "Resonant\_reactions\_matrix\_update(<...>)" in "Resonant\_reactions.py" where Si with MeV for Breit\_Wigner`s formula are used.
-
-Secondary units are called SA[name], futher are ratios between them and there SI counterparts.
+Secondary units are called SA[name]. Here are ratios between all major SA units and their SI counterparts:
 
 \vspace{1em}
 
-\noindent - SAJoul = $10^{22}$ Joul \\
-- SAWatt = $3,154 \times 10^{29}$ Watt \\
-- SAPascal = $10^{16}$ Pascal \\
+\noindent - SAJoul $\approx$ $10^{22}$ Joul \\
+- SAWatt $\approx$ $3,154 \times 10^{29}$ Watt \\
+- SAPascal $\approx$ $10^{16}$ Pascal \\
 
 \section{Requiered external libraries:}
 
-For stable forkflow Star Soft 4.9 requers a list of external Python libraries:
+For a stable workflow Plasmium 5.0 requers a set of external Python libraries:
 
 \begin{itemize}
 \item matplotlib;
-\item scipy;
+\item mplcursors;
 \item numpy.
 \end{itemize}
 
 \section{Components and structure:}
 
-Current version 4.9 of "Star Soft" consists of 17 components, including: main script, 11 modules, output visualiser, 2 input text files and 2 output text files.
+Current version 5.0 of Plasmium consists of 19 components, including: main script, 11 modules, 4 input text files, 2 output text files and additional output visualiser.
 
 \begin{itemize}
 
-\item Main script: Folder name: "Star\_Soft\_main". Performs general management of modules and variables, parcing of general simulation settings, some minor calculations and turning text modeling output into graphs using mathplotlib.pyplot at the end.
+\item Main script: Folder name: "Plasmium\_main.py". Performs general management of modules and variables, parcing of general simulation settings from ''Simulation\_input.txt'', minor calculations, data recording and turning text output into graphs using mathplotlib.pyplot.
 
-\item Nuclear decay reactions module: Folder name: "Decay\_reactions". Contains a pack of methods for reading and storing information about nuclear decay reactions and calculating there rates.
+\item Nuclear decay reactions module: Folder name: "Decay\_reactions.py". Contains a pack of methods for reading and storing information about nuclear decay reactions from ''Simulation\_input.txt'' and calculating their rates.
 
-\item "Simulation\_output.txt" parcer: Folder name: "Parcer". A script that turns text modeling output into graphs using mathplotlib.pyplot.
+\item "Simulation\_output.txt" parcer: Folder name: "Parcer.py". A script that turns text modeling output into graphs using mathplotlib.pyplot.
 
-\item Differential equations solving module: Folder name: "Differentials\_solving\_methods". Contains methods (in current version 1) for solving systems of differential equations that describe rate of concentrations of components change.
+\item Differential equations solving module: Folder name: "Differentials\_solving\_methods.py". Contains a set of different numerical methods for solving systems of differential equations that describe behaviour of plasma properties.
 
-\item Display module: Folder name: "Displays". Contains methods for displaying states of different parts of modeling in a comfortable to read way.
+\item Display module: Folder name: "Displays.py". Contains methods for displaying states of different parts of modeling in a humanly readable way.
 
-\item Electron / positron maganing module: Folder name: "Electron\_positron\_operations". Contains methods for: storing information about reaction`s effect on electron / positron concentrations, electron / positron initial concentration count, rates of there concentration change.
+\item Electron and positron maganing module: Folder name: "Electron\_positron\_operations.py". Contains methods for: reading information about reaction`s effect on concentrations of electrons and positrons from ''Simulation\_input'', storing that information and calculating initial values of those concentrations as well as their changing rates.
 
-\item Wolrd constants initialization module: Folder name: "World\_constants\_initializer". Constains a method to parse input file "World\_constants.txt" and turn each line constaining a constant info in format "[Name] = [Value] [Measure units]" into global constant with coresponding name and value.
+\item Wolrd constants initialization module: Folder name: "World\_constants.py". Contains a list of all universal constants used in the modeling.
 
-\item Elements technical operations module: Folder name: "Elements\_opertaions". Contains many technical methods for parcing parts of "Simulation\_input.txt" aand inside data as well as some calculating methods.
+\item Elements technical operations module: Folder name: "Elements\_opertaions.py". Contains many technical methods for parcing parts of "Simulation\_input.txt" and ''Elements\_data.txt'' as well as performing calculations.
 
-\item Neutrino module: Folder name: "Neutrino\_spectrum": Contains methods for: storing information about reaction`s neutrino emission and calculation neutrino flux / energy spectrum based on rates of reactions.
+\item Neutrino module: Folder name: "Neutrino\_spectrum.py": Contains methods for parcing information about reaction`s neutrino emission from ''Simulation\_input.txt'' and calculation and visualizing neutrino flux(energy) spectrum based on rates of those reactions.
 
-\item Processes module: Folder name: "Processes": Contains  a pack of methods for reading and storing information about all types of reactions, calculating and updating there rates, based on methods from article [1] about nuclear reactions rates.
+\item Processes module: Folder name: "Processes.py": Contains methods for calculating rates of many non-decay reactions, partially based on [1]. For a full explanation of the model used, look at the corresponding section of this manual.
 
-\item Resonant reactions module: Folder name: "Resonant\_reactions". Contains a pack of methods for reading and storing information about resonant reaction and calculating there cross-sections and rates.
+\item Resonant reactions module: Folder name: "Resonant\_reactions.py". Contains a pack of methods for reading information about resonant reactions from ''Simulation\_input.txt'', storing it and calculating their cross-sections and rates based on information about resonances from ''Resonant\_reactions\_resonance\_parameters.txt''.
 
-\item Temperature module: Folder name: "Temperature\_change". Contains a method that calculates energy impacts and loses of ther star, so change of the temperature of its core.
+\item Temperature module: Folder name: "Temperature\_change.py". Contains methods to calculates total energy impacts and loses of reactions, annhialation of electrons and positrons,  the stellar core.
 
-\item Unresonant reactions module: Folder name: "Unresonant\_reactions". Contains a pack of methods for reading and storing information about unresonant reactions and calculating there rates.
+\item Unresonant reactions module: Folder name: "Unresonant\_reactions.py". Contains a pack of methods for reading information about unresonant reactions from ''Simulation\_input.txt'', storing it  and calculating rates of those reactions.
 
-\item Configs input file: Folder name: "Simulation\_input". Main configuration file of the modeling. Contains parametrs of simulated star as well as all of the reactions and constants that determine there rates.
+\item Configs input file: Folder name: "Simulation\_input". Main configuration file of the modeling. Contains parametrs of stellar core that will be simulated as well as all of the reactions and constants that determine their rates (with only esception being Processes).
 
-\item Wolrd constants file: Folder name: "World\_constants". Contains class with all world constants from which they can be called using there name.
+\item Config file with advanced parameters: Folder name: ''Advanced\_tweakables.py''. Contains a set of specific parameters that may be requered to be tuned for advanced simulations, in the code they are called using ''At.'' and their name.
 
-\item Elements data file: Folder name: "Elements\_data". Contains list of all used elements (there cores) as well as there mass, charge and spin of them.
+\item Resonaces data file: Folder name: ''Resonant\_reactions\_resonance\_parameters.txt''. Contains information about resonances that "Resonant\_reactions.py" accounts for while creating the resonant reactions matrix.
 
-\item Data output file: Folder name: "Simulation\_output". Main output file that is used to store modeling data in text format. Not designed to be read manually.
+\item Wolrd constants file: Folder name: "World\_constants.py". Contains class with all world constants used in the simulation, in the code they are called using ''Wc.'' and their name.
 
-\item Logs life: Folder name: "Logs". Secondary output file that contains logs of simulation, designed for troubleshooting.
+\item Elements data file: Folder name: "Elements\_data.txt". Contains list of all used elements and isotops (their cores) as well as their mass, charge, spin and parity.
+
+\item Data output file: Folder name: "Simulation\_output.txt". Primary output file that is used to store modeling data in text format. Is not designed to be read manually.
+
+\item Logs: Folder name: "Logs.txt". Secondary output file that contains logs of the simulation, is designed for troubleshooting.
 
 \end{itemize}
 
@@ -103,9 +109,9 @@ Current version 4.9 of "Star Soft" consists of 17 components, including: main sc
 
 \vspace{1em}
 
-\namefunction{Decay\_reactions\_matrix\_create(Elements, R, T, p0, T0)}{Elements [array] - copy of "Elements\_data.txt"; R [float] - universal gas constant in SI; T [float] - currect core temperature in Kelvins; p0 [float] - normal atmospherical pressure in pascals; T0 [float] - normal temperature in Kelvin}{Uses "Simulation\_input" and "Elements\_data.txt" to create a partially filled template for "Decay\_reactions":
+\namefunction{Decay\_reactions\_matrix\_create(Elements, R, T, p0, T0)}{Elements [array] - copy of "Elements\_data.txt"; R [float] - universal gas constant in SI; T [float] - currect core temperature in Kelvins; p0 [float] - normal atmospherical pressure in pascals; T0 [float] - normal temperature in Kelvin}{Uses "Simulation\_input" and "Elements\_data.txt" to create a partially filled template for decay reactions matrix:
 
-\textbf{Decay\_reactions for reaction with number $i$:}
+\textbf{Decay\_reactions matrix structure for reaction with number $i$:}
 \begin{itemize}
 	\item Decay\_reactions[0][$i$] - initial element;
 	\item Decay\_reactions[1][$i$] - mass of initial element;
@@ -120,12 +126,12 @@ Current version 4.9 of "Star Soft" consists of 17 components, including: main sc
 	\item Decay\_reactions[10][$i$] - charge of second resulting element;
 	\item Decay\_reactions[11][$i$] - spin of second resulting element;
 	\item Decay\_reactions[12][$i$] - normal half-life of initial element;	
-	\item Decay\_reactions[13][$i$] - constant of the reaction (determines dependence from temperature and density of the plasma);
+	\item Decay\_reactions[13][$i$] - constant of the reaction (determines dependence of nuclei half-life from temperature and density of the plasma). Is not currently used anywhere and shall be kept as 0;
 	\item Decay\_reactions[14][$i$] - type of the reaction (1 - alpha decay, 2 - beta decay (+/-));
 	\item Decay\_reactions[15][$i$] - energetic reaction effect;
 	\item Decay\_reactions[16][$i$] - normal temperature in Kelvin;
-	\item Decay\_reactions[17][$i$] - normal density of the substance from the initial element (as a gas);
-	\item Decay\_reactions[18][$i$] - modified half-life of the initial element;
+	\item Decay\_reactions[17][$i$] - normal density of the substance from the initial element (as a gas at normal pressure of one atmosphere);
+	\item Decay\_reactions[18][$i$] - modified half-life of the initial element (is equal to normal half-life);
 	\item Decay\_reactions[19][$i$] - number of reactions per $cm^{-3}$ per $s^{-1}$.
 \end{itemize}
 
@@ -133,11 +139,15 @@ Current version 4.9 of "Star Soft" consists of 17 components, including: main sc
 
 \vspace{1em}
 
-\namefunction{Decay\_reactions\_matrix\_update(Decay\_reactions, ro, T)}{Decay\_reactions [array] - decay reactions matrix; ro - current core density in $g/cm^3$ ; T [float] - currect core temperature in Kelvin}{This method is supposed to adjust half-lifes of elemnts nucleus to current density and temperature of the core. I NOT USED AT SHALL NOT BE TOUCHED!}{Decay\_reactions [array] - decay reactions matrix}
+\namefunction{Decay\_reactions\_matrix\_update(Decay\_reactions, ro, T)}{Decay\_reactions [array] - decay reactions matrix; ro - current core density in $g/cm^3$ ; T [float] - currect core temperature in Kelvin}{
+
+This method was orginally created to account for potential change of nuclei half-life change in extreme conditions, though the model used in it turned out to come from untrusted sources and therefore shall not be used to avoid inaccuraces
+
+}{Decay\_reactions [array] - decay reactions matrix}
 
 \vspace{1em}
 
-\namefunction{Decay\_reactions\_count(Decay\_reactions, Concentrations)}{Decay\_reactions [array] - decay reactions matrix; Concentrations - [array] stores concentrations of elements in format [elements (navigation part)][concentrations] with navigation [1][Number of the element]}{Calculates rates of nuclear decay recations (not reactions change) based on formula for nucler decay:
+\namefunction{Decay\_reactions\_count(Decay\_reactions, Concentrations)}{Decay\_reactions [array] - decay reactions matrix; Concentrations - [array] stores concentrations of elements in format [[elements (navigation part)], [concentrations]] with navigation for concentrations [1][Number of isotope]}{Calculates rates of nuclear decay recations based on formulas for nucler decay:
 
 If n is concentration of nuclei with half-life T, time is t, then:
 
@@ -161,7 +171,7 @@ And since on every step of calculation we act as t = 0, that can be transformed 
 
 \vspace{1em}
 
-\namefunction{Courant\_diff\_solve(Unresonant\_reactions, Resonant\_reactions, \begin{sloppypar}Decay\_reactions, Processes, Speed, Time, Smart, M\_nuc, Concentrations, Mass\_fractions, R\_core, T, ro, Average\_per\_particle\_weight, Electron\_unresonant\_reaction\_effect, Positron\_unresonant\_reaction\_effect, Electron\_resonant\_reaction\_effect, Positron\_resonant\_reaction\_effect, Electron\_decay\_reaction\_effect, Positron\_decay\_reaction\_effect, Electron\_process\_effect, Positron\_process\_effect, Elements\_burning\_time, Burning\_speed, Elements, Electrons\_concentration, Positrons\_concentration, T\_surface, R\_star, i, R, N\_a)\end{sloppypar}}{Unresonant\_reactions [array] - unresonant reactions matrix, Resonant\_reactions [array] - resonant reactions matrix, Decay\_reactions [array] - decay reactions matrix, Processes [array] - processes matrix, Speed [float] - Courant`s number, Time [float] - virtual time from start of the modeling in years, Smart [bool] - parameter that determins if system can adjust Courant`s number in the process (dosent work in current version), M\_nuc [float] - atomic unit of mass in grams, Concentrations [array] - stores concentrations of elements in format [elements (navigation part)][concentrations] with navigation [1][Number of the element], Mass\_fractions - [array] stores mass fractions of elements in format [elements (navigation part)][mass fractions] with navigation [1][Number of elements], R\_core [float] - radius of the core of the star in cantimeters, T [float] - current core temperature in Kelvins, ro [float] - current core density in $g/cm^3$, Average\_per\_particle\_weight [float] - average per particle molecular weight, Electron\_unresonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read unresonant reaction], Positron\_unresonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read unresonant reaction], Electron\_resonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read resonant reaction], Positron\_resonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read resonant reaction], Electron\_decay\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read decay reaction], Positron\_decay\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of read decay reaction], Electron\_process\_effect [array] - stores process` impacts on concentrations of electrons (how many process produces or consumes) in format [Process` impact] with navigation [Number of read process], Positron\_process\_effect [array] - stores process` impacts on concentrations of positrons (how many process produces or consumes) in format [Process` impact] with navigation [Number of read process], Elements\_burning\_time [array] - stores burning times of elements in format [Elements (navigation part)][Elements burning time] with navigation [1][Number of the element], Burning\_speed [array] - stores burning times of elements in format [Elements (navigation part)][Elements burning speed] with navigation [1][Number of the element], Elements [array] - copy of "Elements\_data.txt", Electrons\_concentration - concentration of electrons, Positrons\_concentration - concentration of positrons, T\_surface - surface star temperature in Kelvins, R\_star, i [int] - degrees of freedom, R [float] - universal gas constant in SI, N\_a [float] - Avogadro`s number in SI}{Calculates rates of all recations using coresponding calculating methods for there types, turns there rates into rates of changes of concentrations of elements (burning speed for short):
+\namefunction{Courant\_diff\_solve(Unresonant\_reactions, Resonant\_reactions, \begin{sloppypar}Decay\_reactions, Processes, Speed, Time, Concentrations, Mass\_fractions, R\_core, T, ro, Average\_per\_particle\_weight, Electron\_unresonant\_reaction\_effect, Positron\_unresonant\_reaction\_effect, Electron\_resonant\_reaction\_effect, Positron\_resonant\_reaction\_effect, Electron\_decay\_reaction\_effect, Positron\_decay\_reaction\_effect, Electron\_process\_effect, Positron\_process\_effect, Elements\_burning\_time, Burning\_speed, Elements, Electrons\_concentration, Positrons\_concentration, T\_surface, R\_star)\end{sloppypar}}{Unresonant\_reactions [array] - unresonant reactions matrix, Resonant\_reactions [array] - resonant reactions matrix, Decay\_reactions [array] - decay reactions matrix, Processes [array] - processes matrix, Speed [float] - Courant`s number, Time [float] - virtual time from start of the modeling in years, Concentrations [array] - stores concentrations of elements in format [[elements (navigation part)], [concentrations]] with navigation for concentrations [1][Number of isotope], Mass\_fractions - [array] stores mass fractions of elements in format [[elements (navigation part)], [mass fractions]] with navigation for mass fractions [1][Number of isotope], R\_core [float] - radius of the core of the star in cantimeters, T [float] - current core temperature in Kelvins, ro [float] - current core density in $g/cm^3$, Average\_per\_particle\_weight [float] - average per particle molecular weight, Electron\_unresonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Impact of the reaction] with navigation [Number of unresonant reaction], Positron\_unresonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Reactions impact] with navigation [Number of unresonant reaction], Electron\_resonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Impact of the reaction] with navigation [Number of resonant reaction], Positron\_resonant\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Impact of the reaction] with navigation [Number of resonant reaction], Electron\_decay\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of electrons (how many reaction produces or consumes) in format [Impact of the reaction] with navigation [Number of decay reaction], Positron\_decay\_reaction\_effect [array] - stores reaction`s  impacts on concentrations of positrons (how many reaction produces or consumes) in format [Impact of the reaction] with navigation [Number of decay reaction], Electron\_process\_effect [array] - stores process` impacts on concentrations of electrons (how many process produces or consumes) in format [Impact of the process] with navigation [Number of process], Positron\_process\_effect [array] - stores process` impacts on concentrations of positrons (how many process produces or consumes) in format [Impact of the process] with navigation [Number of process], Elements\_burning\_time [array] - stores burning times of elements in format [[Elements (navigation part)], [Elements burning time]] with navigation for element`s burning time [1][Number of the isotope], Burning\_speed [array] - stores burning times of elements in format [[Elements (navigation part)], [Elements burning speed]] with navigation for element`s burning speed [1][Number of the isotope], Elements [array] - copy of "Elements\_data.txt", Electrons\_concentration - concentration of electrons, Positrons\_concentration - concentration of positrons, T\_surface - surface star temperature in Kelvins, R\_star [float] - radium of the star}{Calculates rates of all recations using coresponding calculating methods for there types, turns there rates into rates of changes of concentrations of elements (burning speed for short):
 
 \[\frac{dn_i}{dt} = -a\sum_{i = 1}^{k} R_i\],
 

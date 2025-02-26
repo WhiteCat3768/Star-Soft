@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.11)  26 DEC 2024 00:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.11)  26 FEB 2025 13:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -385,66 +385,72 @@ texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}])
 \openout3 = `"Star Soft Documentation.toc"'.
 
 
-Overfull \hbox (9.01501pt too wide) in paragraph at lines 38--39
-[]\T2A/cmr/m/n/12 Only ex-clu-sions are "Tem-per-a-ture_change.py" where Si is 
-used and method
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 44--47
+Underfull \hbox (badness 10000) in paragraph at lines 46--49
 
  []
 
 
 
 [2]
-Overfull \hbox (78.41724pt too wide) in paragraph at lines 70--71
+Overfull \hbox (94.08005pt too wide) in paragraph at lines 72--73
 []\T2A/cmr/m/n/12 Differential equa-tions solv-ing mod-ule: Folder name: "Dif-f
-er-en-tials_solving_methods".
+er-en-tials_solving_methods.py".
  []
 
 
-Overfull \hbox (77.96046pt too wide) in paragraph at lines 74--75
-[]\T2A/cmr/m/n/12 Electron / positron ma-g-a-n-ing mod-ule: Folder name: "Elec-
-tron_positron_operations".
+Overfull \hbox (106.67564pt too wide) in paragraph at lines 76--77
+[]\T2A/cmr/m/n/12 Electron and positron ma-g-a-n-ing mod-ule: Folder name: "Ele
+c-tron_positron_operations.py".
  []
 
 
-Overfull \hbox (67.57948pt too wide) in paragraph at lines 76--77
+Overfull \hbox (2.49146pt too wide) in paragraph at lines 76--77
+\T2A/cmr/m/n/12 con-cen-tra-tions of elec-trons and positrons from ''Sim-u-la-t
+ion_input'', stor-
+ []
+
+
+Overfull \hbox (25.81197pt too wide) in paragraph at lines 78--79
 []\T2A/cmr/m/n/12 Wolrd con-stants ini-tial-iza-tion mod-ule: Folder name: "Wor
-ld_constants_initializer".
+ld_constants.py".
  []
 
 
-Overfull \hbox (32.3425pt too wide) in paragraph at lines 78--79
+Overfull \hbox (48.00531pt too wide) in paragraph at lines 80--81
 []\T2A/cmr/m/n/12 Elements tech-ni-cal op-er-a-tions mod-ule: Folder name: "El-
-e-ments_opertaions".
+e-ments_opertaions.py".
  []
 
 
-Overfull \hbox (32.12032pt too wide) in paragraph at lines 78--79
+Overfull \hbox (32.12032pt too wide) in paragraph at lines 80--81
 \T2A/cmr/m/n/12 Con-tains many tech-ni-cal meth-ods for parc-ing parts of "Sim-
 u-la-tion_input.txt"
  []
 
 
-Overfull \hbox (2.18741pt too wide) in paragraph at lines 80--81
-[]\T2A/cmr/m/n/12 Neutrino mod-ule: Folder name: "Neu-trino_spectrum": Con-tain
-s meth-
+
+[3{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Overfull \hbox (8.84407pt too wide) in paragraph at lines 90--91
+[]\T2A/cmr/m/n/12 Unresonant re-ac-tions mod-ule: Folder name: "Un-res-o-nant_r
+eactions.py".
  []
 
 
+Overfull \hbox (43.3065pt too wide) in paragraph at lines 94--95
+[]\T2A/cmr/m/n/12 Config file with ad-vanced pa-ram-e-ters: Folder name: ''Ad-v
+anced_tweakables.py''.
+ []
 
-[3{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (0.25542pt too wide) in paragraph at lines 84--85
-[]\T2A/cmr/m/n/12 Resonant re-ac-tions mod-ule: Folder name: "Res-o-nant_reacti
-ons". Con-
+
+Overfull \hbox (69.01964pt too wide) in paragraph at lines 96--97
+[]\T2A/cmr/m/n/12 Resonaces data file: Folder name: ''Res-o-nant_reactions_reso
+nance_parameters.txt''.
  []
 
 
 
 [4]
-Overfull \hbox (0.57945pt too wide) in paragraph at lines 132--132
+Overfull \hbox (0.57945pt too wide) in paragraph at lines 138--138
 []\T2A/cmr/bx/n/12 Description\T2A/cmr/m/n/12 : Uses "Sim-u-la-tion_input" and 
 "El-e-ments_data.txt" to cre-
  []
@@ -452,84 +458,78 @@ Overfull \hbox (0.57945pt too wide) in paragraph at lines 132--132
 
 
 [5]
-Overfull \hbox (1.63202pt too wide) in paragraph at lines 158--158
-\T2A/cmr/m/n/12 (nav-i-ga-tion part)][concentrations] with nav-i-ga-tion [1][Nu
-m-ber of the el-e-ment]. 
+
+[6]
+Overfull \hbox (12.40013pt too wide) in paragraph at lines 168--168
+\T2A/cmr/m/n/12 (nav-i-ga-tion part)], [con-cen-tra-tions]] with nav-i-ga-tion 
+for con-cen-tra-tions [1][Num-
  []
 
 
-Overfull \hbox (22.06721pt too wide) in paragraph at lines 210--210
+Overfull \hbox (22.06721pt too wide) in paragraph at lines 220--220
 []\T2A/cmr/bx/n/12 Courant_diff_solve(Unresonant_reactions, Res-o-nant_reaction
 s, 
  []
 
 
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 []\T2A/cmr/bx/n/12 Decay_reactions, Pro-cesses, Speed, Time,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
-\T2A/cmr/bx/n/12 Smart, M_nuc, Con-cen-tra-tions, Mass_fractions,
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
+\T2A/cmr/bx/n/12 Con-cen-tra-tions, Mass_fractions, R_core,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
-\T2A/cmr/bx/n/12 R_core, T, ro, Av-er-age_per_particle_weight,
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
+\T2A/cmr/bx/n/12 T, ro, Av-er-age_per_particle_weight,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 \T2A/cmr/bx/n/12 Elec-tron_unresonant_reaction_effect,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 \T2A/cmr/bx/n/12 Positron_unresonant_reaction_effect,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 \T2A/cmr/bx/n/12 Elec-tron_resonant_reaction_effect,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 \T2A/cmr/bx/n/12 Positron_resonant_reaction_effect,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 \T2A/cmr/bx/n/12 Elec-tron_decay_reaction_effect,
  []
 
 
-Underfull \hbox (badness 5119) in paragraph at lines 210--210
+Underfull \hbox (badness 5119) in paragraph at lines 220--220
 \T2A/cmr/bx/n/12 Positron_decay_reaction_effect, Elec-tron_process_effect,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 \T2A/cmr/bx/n/12 Positron_process_effect, El-e-ments_burning_time,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 \T2A/cmr/bx/n/12 Burn-ing_speed, El-e-ments, Elec-trons_concentration,
  []
 
 
-Overfull \hbox (18.73056pt too wide) in paragraph at lines 210--210
+Overfull \hbox (18.73056pt too wide) in paragraph at lines 220--220
 \T2A/cmr/m/n/12 ma-trix, Res-o-nant_reactions [ar-ray] - res-o-nant re-ac-tions
  ma-trix, De-cay_reactions
- []
-
-
-Overfull \hbox (36.64716pt too wide) in paragraph at lines 210--210
-\T2A/cmr/m/n/12 [float] - av-er-age per par-ti-cle molec-u-lar weight, Elec-tro
-n_unresonant_reaction_effect
  []
 
 
@@ -537,19 +537,13 @@ n_unresonant_reaction_effect
 [7]
 
 [8]
-Overfull \hbox (6.6614pt too wide) in paragraph at lines 210--210
-\T2A/cmr/m/n/12 here is cal-cu-lated based on dt with Tem-per-a-ture_change_spe
-ed_count(<...>)
- []
-
-
-Overfull \hbox (34.75449pt too wide) in paragraph at lines 210--211
+Overfull \hbox (34.75449pt too wide) in paragraph at lines 220--220
 \T2A/cmr/m/n/12 trons_burning_speed [float] - burn-ing speed of elec-trons, Pos
 itrons_burning_speed
  []
 
 
-Overfull \hbox (8.38461pt too wide) in paragraph at lines 210--211
+Overfull \hbox (8.38461pt too wide) in paragraph at lines 220--220
 \T2A/cmr/m/n/12 Kelvins, dt [float] - time step of the mod-el-ing in years, El-
 e-ments_burning_time
  []
@@ -557,103 +551,109 @@ e-ments_burning_time
 
 
 [9]
-Overfull \hbox (51.55025pt too wide) in paragraph at lines 224--224
-[]\T2A/cmr/bx/n/12 Elements_burning_speed_state_display(Elements_burning_speed)
-\T2A/cmr/m/n/12 : 
- []
-
-
-Overfull \hbox (8.78441pt too wide) in paragraph at lines 224--224
-[]\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : El-e-ments_burning_speed [
-ar-ray] - stores burn-ing speeds
+Overfull \hbox (6.6614pt too wide) in paragraph at lines 220--220
+\T2A/cmr/m/n/12 here is cal-cu-lated based on dt with Tem-per-a-ture_change_spe
+ed_count(<...>)
  []
 
 
 
 [10]
-Overfull \hbox (38.33406pt too wide) in paragraph at lines 228--228
+Overfull \hbox (51.55025pt too wide) in paragraph at lines 234--234
+[]\T2A/cmr/bx/n/12 Elements_burning_speed_state_display(Elements_burning_speed)
+\T2A/cmr/m/n/12 : 
+ []
+
+
+Overfull \hbox (8.78441pt too wide) in paragraph at lines 234--234
+[]\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : El-e-ments_burning_speed [
+ar-ray] - stores burn-ing speeds
+ []
+
+
+Overfull \hbox (38.33406pt too wide) in paragraph at lines 238--238
 []\T2A/cmr/bx/n/12 Elements_burning_time_state_display(Elements_burning_time)\T
 2A/cmr/m/n/12 : 
  []
 
 
-Overfull \hbox (85.16846pt too wide) in paragraph at lines 236--236
+
+[11]
+Overfull \hbox (85.16846pt too wide) in paragraph at lines 246--246
 []\T2A/cmr/bx/n/12 El_pos_state_display(Electrons_concentration, Positrons_conc
 entration)\T2A/cmr/m/n/12 : 
  []
 
 
-
-[11]
-Overfull \hbox (16.12843pt too wide) in paragraph at lines 240--240
+Overfull \hbox (16.12843pt too wide) in paragraph at lines 250--250
 []\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : Time [float] - cur-rent si
 m-u-la-tion time in years, Time_limit
  []
 
 
-Overfull \hbox (54.9578pt too wide) in paragraph at lines 250--250
+
+[12]
+Overfull \hbox (54.9578pt too wide) in paragraph at lines 260--260
 []\T2A/cmr/bx/n/12 General_condition_display(Concentrations, El-e-ments_burning
 _time,
  []
 
 
-
-[12]
-Overfull \hbox (2.95802pt too wide) in paragraph at lines 260--261
+Overfull \hbox (2.95802pt too wide) in paragraph at lines 270--270
 []\T2A/cmr/bx/n/12 Output vari-ables\T2A/cmr/m/n/12 : Elec-tron_unresonant_reac
 tion_effect [ar-ray] - stores
  []
 
 
-Overfull \hbox (128.98843pt too wide) in paragraph at lines 264--265
+
+[13]
+Overfull \hbox (128.98843pt too wide) in paragraph at lines 274--274
 \T2A/cmr/m/n/12 duces or con-sumes) with nav-i-ga-tion [Num-ber of res-o-nant r
 e-ac-tion], Positron_resonant_reaction_effect
  []
 
 
-
-[13]
-Overfull \hbox (155.09317pt too wide) in paragraph at lines 268--269
+Overfull \hbox (155.09317pt too wide) in paragraph at lines 278--278
 \T2A/cmr/m/n/12 duces or con-sumes) with nav-i-ga-tion [Num-ber of un-res-o-nan
 t re-ac-tion], Positron_unresonant_reaction_effect
  []
 
 
-Overfull \hbox (21.50905pt too wide) in paragraph at lines 286--286
+
+[14]
+Overfull \hbox (21.50905pt too wide) in paragraph at lines 296--296
 []\T2A/cmr/bx/n/12 Electron_positron_initial_concentration_count(Elements, Con-
 
  []
 
 
-
-[14]
-Overfull \hbox (82.69955pt too wide) in paragraph at lines 299--299
+Overfull \hbox (82.69955pt too wide) in paragraph at lines 309--309
 []\T2A/cmr/bx/n/12 Electron_positron_burning_speed(Electron_unresonant_reaction
 _effect, 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--299
+Underfull \hbox (badness 10000) in paragraph at lines 309--309
 []\T2A/cmr/bx/n/12 Positron_unresonant_reaction_effect, Un-res-o-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--299
+Underfull \hbox (badness 10000) in paragraph at lines 309--309
 \T2A/cmr/bx/n/12 nant_reactions, Elec-tron_resonant_reaction_effect,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--299
+Underfull \hbox (badness 10000) in paragraph at lines 309--309
 \T2A/cmr/bx/n/12 Positron_resonant_reaction_effect, Res-o-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--299
+Underfull \hbox (badness 10000) in paragraph at lines 309--309
 \T2A/cmr/bx/n/12 nant_reactions, Elec-tron_decay_reaction_effect,
  []
 
 
-Underfull \hbox (badness 6575) in paragraph at lines 299--299
+Underfull \hbox (badness 6575) in paragraph at lines 309--309
 \T2A/cmr/bx/n/12 Positron_decay_reaction_effect, De-cay_reactions, Elec-
  []
 
@@ -662,13 +662,13 @@ Underfull \hbox (badness 6575) in paragraph at lines 299--299
 [15]
 
 [16]
-Overfull \hbox (29.37231pt too wide) in paragraph at lines 325--325
+Overfull \hbox (29.37231pt too wide) in paragraph at lines 335--335
 []\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : Elec-trons_burning_speed [
 float], Positrons_burning_speed
  []
 
 
-Overfull \hbox (58.21407pt too wide) in paragraph at lines 325--325
+Overfull \hbox (58.21407pt too wide) in paragraph at lines 335--335
 \T2A/cmr/m/n/12 [float] - Rates of change in elec-tron and positron con-cen-tra
 -tions, Elec-trons_concentration
  []
@@ -676,109 +676,109 @@ Overfull \hbox (58.21407pt too wide) in paragraph at lines 325--325
 
 
 [17]
-Overfull \hbox (47.64583pt too wide) in paragraph at lines 351--351
+
+[18]
+Overfull \hbox (47.64583pt too wide) in paragraph at lines 361--361
 \T2A/cmr/m/n/12 stores con-cen-tra-tions of el-e-ments in for-mat [el-e-ments (
 nav-i-ga-tion part)][concentrations]
  []
 
 
 
-[18]
-
 [19]
-Overfull \hbox (6.18228pt too wide) in paragraph at lines 393--394
+Overfull \hbox (6.18228pt too wide) in paragraph at lines 403--403
 []\T2A/cmr/bx/n/12 Output vari-ables\T2A/cmr/m/n/12 : Av-er-age_per_particle_we
 ight [float] - Av-er-age molec-
  []
 
 
-Overfull \hbox (38.70894pt too wide) in paragraph at lines 401--401
+
+[20]
+Overfull \hbox (38.70894pt too wide) in paragraph at lines 411--411
 []\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : line [string] - re-ac-tion
 `s equa-tion from "Sim-u-la-tion_input.txt",
  []
 
 
-
-[20]
-Overfull \hbox (23.3849pt too wide) in paragraph at lines 405--405
+Overfull \hbox (23.3849pt too wide) in paragraph at lines 415--415
 []\T2A/cmr/bx/n/12 Read_the_resonant_reaction(line, Re-ac-tion_number, El-e-men
 ts,
  []
 
 
-Overfull \hbox (38.70894pt too wide) in paragraph at lines 405--405
+Overfull \hbox (38.70894pt too wide) in paragraph at lines 415--415
 []\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : line [string] - re-ac-tion
 `s equa-tion from "Sim-u-la-tion_input.txt",
  []
 
 
-Overfull \hbox (6.17523pt too wide) in paragraph at lines 409--409
+Overfull \hbox (6.17523pt too wide) in paragraph at lines 419--419
 []\T2A/cmr/bx/n/12 Read_the_decay_reaction(line, Re-ac-tion_number, El-e-ments,
 
  []
 
 
-Overfull \hbox (41.97202pt too wide) in paragraph at lines 409--409
+Overfull \hbox (41.97202pt too wide) in paragraph at lines 419--419
 []\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : line [string] - re-ac-tion
 `s` equa-tion from "Sim-u-la-tion_input.txt",
  []
 
 
-Overfull \hbox (29.96384pt too wide) in paragraph at lines 413--413
+
+[21]
+Overfull \hbox (29.96384pt too wide) in paragraph at lines 423--423
 []\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : line [string] - pro-cess` 
 equa-tion from "Sim-u-la-tion_input.txt",
  []
 
 
 
-[21]
-
 [22]
-Overfull \hbox (1.96101pt too wide) in paragraph at lines 462--462
+Overfull \hbox (1.96101pt too wide) in paragraph at lines 472--472
 []\T2A/cmr/bx/n/12 Neutrino_unresonant_reactions_matrix for re-ac-tion with num
 -
  []
 
 
-Overfull \hbox (16.15446pt too wide) in paragraph at lines 462--462
+Overfull \hbox (16.15446pt too wide) in paragraph at lines 472--472
 []\T2A/cmr/m/n/12 Neutrino_unresonant_reactions_matrix[0][$\OML/cmm/m/it/12 i$\
 T2A/cmr/m/n/12 ] - re-ac-tion type (0 - neutrino-
  []
 
 
-Overfull \hbox (1.47055pt too wide) in paragraph at lines 462--462
+
+[23]
+Overfull \hbox (1.47055pt too wide) in paragraph at lines 472--472
 []\T2A/cmr/m/n/12 Neutrino_unresonant_reactions_matrix[2][$\OML/cmm/m/it/12 i$\
 T2A/cmr/m/n/12 ] - neu-trino chan-nel en-ergy
  []
 
 
-Overfull \hbox (1.47055pt too wide) in paragraph at lines 462--462
+Overfull \hbox (1.47055pt too wide) in paragraph at lines 472--472
 []\T2A/cmr/m/n/12 Neutrino_unresonant_reactions_matrix[4][$\OML/cmm/m/it/12 i$\
 T2A/cmr/m/n/12 ] - neu-trino chan-nel en-ergy
  []
 
 
-
-[23]
-Overfull \hbox (3.1021pt too wide) in paragraph at lines 478--478
+Overfull \hbox (3.1021pt too wide) in paragraph at lines 488--488
 []\T2A/cmr/m/n/12 Neutrino_resonant_reactions_matrix[0][$\OML/cmm/m/it/12 i$\T2
 A/cmr/m/n/12 ] - re-ac-tion type (0 - neutrino-
  []
 
 
-Overfull \hbox (0.49161pt too wide) in paragraph at lines 478--478
+Overfull \hbox (0.49161pt too wide) in paragraph at lines 488--488
 []\T2A/cmr/m/n/12 Neutrino_resonant_reactions_matrix[1][$\OML/cmm/m/it/12 i$\T2
 A/cmr/m/n/12 ] - max-i-mum neu-trino en-ergy
  []
 
 
-Overfull \hbox (11.91238pt too wide) in paragraph at lines 478--478
+Overfull \hbox (11.91238pt too wide) in paragraph at lines 488--488
 []\T2A/cmr/m/n/12 Neutrino_resonant_reactions_matrix[3][$\OML/cmm/m/it/12 i$\T2
 A/cmr/m/n/12 ] - prob-a-bil-ity of neu-trino chan-
  []
 
 
-Overfull \hbox (11.91238pt too wide) in paragraph at lines 478--478
+Overfull \hbox (11.91238pt too wide) in paragraph at lines 488--488
 []\T2A/cmr/m/n/12 Neutrino_resonant_reactions_matrix[5][$\OML/cmm/m/it/12 i$\T2
 A/cmr/m/n/12 ] - prob-a-bil-ity of neu-trino chan-
  []
@@ -786,166 +786,148 @@ A/cmr/m/n/12 ] - prob-a-bil-ity of neu-trino chan-
 
 
 [24]
-Overfull \hbox (6.82204pt too wide) in paragraph at lines 510--510
+
+[25]
+Overfull \hbox (6.82204pt too wide) in paragraph at lines 520--520
 []\T2A/cmr/m/n/12 Neutrino_processes_matrix[2][$\OML/cmm/m/it/12 i$\T2A/cmr/m/n
 /12 ] - neu-trino chan-nel en-ergy for first chan-
  []
 
 
-Overfull \hbox (54.69942pt too wide) in paragraph at lines 514--514
+Overfull \hbox (54.69942pt too wide) in paragraph at lines 524--524
 []\T2A/cmr/bx/n/12 Neutrino_spectrum_create(Neutrino_unresonant_reactions_matri
 x,
  []
 
 
-Overfull \hbox (8.3844pt too wide) in paragraph at lines 514--514
+Overfull \hbox (8.3844pt too wide) in paragraph at lines 524--524
 \T2A/cmr/bx/n/12 Un-res-o-nant_reactions, Neu-trino_resonant_reactions_matrix,
  []
 
 
-Overfull \hbox (2.15953pt too wide) in paragraph at lines 514--514
+Overfull \hbox (2.15953pt too wide) in paragraph at lines 524--524
 \T2A/cmr/bx/n/12 Res-o-nant_reactions, Neu-trino_decay_reactions_matrix, De-
  []
 
 
-Overfull \hbox (15.81865pt too wide) in paragraph at lines 514--514
+Overfull \hbox (15.81865pt too wide) in paragraph at lines 524--524
 \T2A/cmr/bx/n/12 cay_reactions, Neu-trino_processes_matrix, Pro-cesses, R_core,
 
  []
 
 
 
-[25]
-
 [26]
-Overfull \hbox (0.57945pt too wide) in paragraph at lines 535--535
+Overfull \hbox (0.57945pt too wide) in paragraph at lines 545--545
 []\T2A/cmr/bx/n/12 Description\T2A/cmr/m/n/12 : Uses "Sim-u-la-tion_input" and 
 "El-e-ments_data.txt" to cre-
  []
 
 
-Overfull \hbox (2.30249pt too wide) in paragraph at lines 543--543
+
+[27]
+Overfull \hbox (2.30249pt too wide) in paragraph at lines 553--554
 []\T2A/cmr/bx/n/12 Description\T2A/cmr/m/n/12 : Ap-plies Pro-cesses_formulas_co
 ntainer(Processes, T, N_a,
  []
 
 
 
-[27]
-Overfull \hbox (0.57945pt too wide) in paragraph at lines 601--601
+[28]
+Overfull \hbox (0.57945pt too wide) in paragraph at lines 611--611
 []\T2A/cmr/bx/n/12 Description\T2A/cmr/m/n/12 : Uses "Sim-u-la-tion_input" and 
 "El-e-ments_data.txt" to cre-
  []
 
 
 
-[28]
-
 [29]
-Overfull \hbox (5.33205pt too wide) in paragraph at lines 601--601
+Overfull \hbox (5.33205pt too wide) in paragraph at lines 611--611
 \T2A/cmr/m/n/12 (Resonant_reactions[23][$\OML/cmm/m/it/12 i$\T2A/cmr/m/n/12 ][0
 ][$\OML/cmm/m/it/12 j$\T2A/cmr/m/n/12 ] and Resonant_reactions[23][$\OML/cmm/m/
 it/12 i$\T2A/cmr/m/n/12 ][1][$\OML/cmm/m/it/12 j$\T2A/cmr/m/n/12 ]
  []
 
 
-Overfull \hbox (17.4864pt too wide) in paragraph at lines 635--635
+Overfull \hbox (17.4864pt too wide) in paragraph at lines 645--645
 []\T2A/cmr/bx/n/12 Resonant_reactions_matrix_update(Resonant_reactions, Con-
  []
 
 
-Overfull \hbox (0.32674pt too wide) in paragraph at lines 635--635
+
+[30]
+Overfull \hbox (0.32674pt too wide) in paragraph at lines 645--645
 []\T2A/cmr/m/n/12 Also, both in-te-grals are nor-mal-ized us-ing In-te-gra-tion
 _trapz(x, y) method.
  []
 
 
 
-[30]
-Overfull \hbox (10.84773pt too wide) in paragraph at lines 641--641
+[31]
+Overfull \hbox (10.84773pt too wide) in paragraph at lines 651--651
 []\T2A/cmr/bx/n/12 Resonant_reactions_reactions_count(Resonant_reactions, Pi,
  []
 
 
-Overfull \hbox (22.45732pt too wide) in paragraph at lines 675--675
+Overfull \hbox (22.45732pt too wide) in paragraph at lines 685--685
 []\T2A/cmr/bx/n/12 Temperature_change_speed_count(Unresonant_reactions, Res-
  []
 
 
-Overfull \hbox (27.3103pt too wide) in paragraph at lines 675--675
+Overfull \hbox (27.3103pt too wide) in paragraph at lines 685--685
 \T2A/cmr/bx/n/12 o-nant_reactions, De-cay_reactions, Pro-cesses, T_surface, R_s
 tar,
  []
 
 
-
-[31]
-Overfull \hbox (21.41057pt too wide) in paragraph at lines 675--675
+Overfull \hbox (21.41057pt too wide) in paragraph at lines 685--685
 []\T2A/cmr/bx/n/12 Input vari-ables\T2A/cmr/m/n/12 : dt [float] - time step of 
 the mod-el-ing, Un-res-o-nant_reactions
  []
 
 
-Overfull \hbox (46.34308pt too wide) in paragraph at lines 683--683
+
+[32]
+Overfull \hbox (46.34308pt too wide) in paragraph at lines 693--693
 []\T2A/cmr/bx/n/12 Temperature_change_time_count(T, Tem-per-a-ture_change_speed
 )\T2A/cmr/m/n/12 : 
  []
 
 
 
-[32]
-
 [33]
-Overfull \hbox (12.32652pt too wide) in paragraph at lines 722--722
+
+[34]
+Overfull \hbox (12.32652pt too wide) in paragraph at lines 732--732
 []\T2A/cmr/bx/n/12 Unresonant_reactions_matrix_update(Unresonant_reactions,
  []
 
 
-Overfull \hbox (5.61429pt too wide) in paragraph at lines 740--740
+Underfull \hbox (badness 10000) in paragraph at lines 732--733
+
+ []
+
+
+Overfull \hbox (5.61429pt too wide) in paragraph at lines 750--750
 []\T2A/cmr/bx/n/12 Unresonant_reactions_count(Unresonant_reactions, Con-cen-
  []
 
 
 
-[34]
-
 [35]
-Overfull \hbox (68.62535pt too wide) in paragraph at lines 799--800
+
+[36]
+Overfull \hbox (68.62535pt too wide) in paragraph at lines 809--810
 \T2A/cmr/m/n/12 com-pli-cated for-mu-las for them are hard-written into Pro-ces
 ses_formulas_container(<...>)
  []
 
 
 
-[36]
-Overfull \hbox (7.69719pt too wide) in paragraph at lines 809--810
+[37]
+Overfull \hbox (7.69719pt too wide) in paragraph at lines 819--820
 []\T2A/cmr/m/n/12 Resonant, De-cay and Pro-cesses: Com-po-nents_(Energy out-put
 )_(Neutrino
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 825--826
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 827--828
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 829--830
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 831--832
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 833--834
-
  []
 
 
@@ -974,8 +956,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 843--844
  []
 
 
-
-[37]
 Underfull \hbox (badness 10000) in paragraph at lines 845--846
 
  []
@@ -990,45 +970,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 849--850
 
  []
 
-LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
-883.
-(c:/texlive/2024/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
-File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-)
-Overfull \hbox (85.30316pt too wide) in paragraph at lines 893--893
-[]\T2A/cmtt/m/n/10.95 [Output time]>>>Succesfully created unresonant reaction m
-atrix with [int] reactions.[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 851--852
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 853--854
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 855--856
+
  []
 
 
 
 [38]
-Overfull \hbox (73.98642pt too wide) in paragraph at lines 893--893
+Underfull \hbox (badness 10000) in paragraph at lines 857--858
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 859--860
+
+ []
+
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
+893.
+(c:/texlive/2024/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Overfull \hbox (85.30316pt too wide) in paragraph at lines 903--903
+[]\T2A/cmtt/m/n/10.95 [Output time]>>>Succesfully created unresonant reaction m
+atrix with [int] reactions.[] 
+ []
+
+
+Overfull \hbox (73.98642pt too wide) in paragraph at lines 903--903
 []\T2A/cmtt/m/n/10.95 [Output time]>>>Succesfully created resonant reaction mat
 rix with [int] reactions.[] 
  []
 
 
-Overfull \hbox (57.0113pt too wide) in paragraph at lines 893--893
+Overfull \hbox (57.0113pt too wide) in paragraph at lines 903--903
 []\T2A/cmtt/m/n/10.95 [Output time]>>>Succesfully created decay reaction matrix
  with [int] reactions.[] 
  []
 
 
-Overfull \hbox (28.71945pt too wide) in paragraph at lines 893--893
+
+[39]
+Overfull \hbox (28.71945pt too wide) in paragraph at lines 903--903
 []\T2A/cmtt/m/n/10.95 [Output time]>>>Succesfully created processes matrix with
  [int] reactions.[] 
  []
 
 
-Overfull \hbox (72.07466pt too wide) in paragraph at lines 908--908
+Overfull \hbox (72.07466pt too wide) in paragraph at lines 918--918
 []\T2A/cmtt/m/n/6 [Output time]>>>General info: Mass fractions: Passed time, pe
 rcentage of time (from time limit), <Concentrations>, El. conc., Posit. conc., 
 Temp.[] 
  []
 
 
-Overfull \hbox (68.88794pt too wide) in paragraph at lines 908--908
+Overfull \hbox (68.88794pt too wide) in paragraph at lines 918--918
 []\T2A/cmtt/m/n/6 [Output time]>>>Reactions speed: Unres.: [<Reactions rates>] 
 Res.: [<Reactions rates>] Decay: [<Reactions rates>] Processes: [<Reactions rat
 es>][] 
@@ -1036,7 +1043,7 @@ es>][]
 
 
 
-[39] (./Star Soft Documentation.aux)
+[40] (./Star Soft Documentation.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -1045,11 +1052,11 @@ L3 programming layer <2024-07-20>
 Here is how much of TeX's memory you used:
  3424 strings out of 473578
  53651 string characters out of 5732242
- 1935960 words of memory out of 5000000
+ 1937960 words of memory out of 5000000
  26239 multiletter control sequences out of 15000+600000
  572743 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 59i,9n,67p,4347b,328s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 59i,9n,67p,4169b,328s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dis
@@ -1065,10 +1072,10 @@ s/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/pu
 blic/cm-super/sfrm1440.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-su
 per/sfrm2074.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt08
 00.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on "Star Soft Documentation.pdf" (39 pages, 321869 bytes).
+Output written on "Star Soft Documentation.pdf" (40 pages, 324885 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
+ 215 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
